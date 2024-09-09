@@ -1,48 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Action Component -->
+
+    <style name="button_style">
+        <item name="background">@drawable/shape_rounded_rect_60dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
     <style name="button1_style">
         <item name="background">@drawable/shape_rounded_rect_50dp</item>
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/pretendard_medium</item>
     </style>
 
+    <style name="button1_style_80dp">
+        <item name="background">@drawable/shape_rounded_rect_50dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
+    <!-- Containment Component -->
+
     <style name="list1_style">
         <item name="background">@drawable/shape_rounded_rect_12dp</item>
     </style>
 
     <style name="list2_style">
-        <item name="background">@color/Gray_im</item>
+        <item name="background">@color/Blue300</item>
     </style>
 
     <style name="list3_style">
         <item name="background">@drawable/shape_rounded_rect_15dp</item>
     </style>
 
+    <style name="list4_style">
+        <item name="background">@drawable/shape_rounded_rect_12dp</item>
+    </style>
+
     <style name="cards_style">
         <item name="background">@drawable/shape_card_15dp</item>
     </style>
 
-    <style name="text_filed_style">
+    <style name="name_style">
+        <item name="background">@drawable/shape_card_15dp</item>
+    </style>
+
+    <style name="information_style">
+        <item name="background">@drawable/shape_card_15dp</item>
+    </style>
+
+    <style name="container_style">
+        <item name="background">@drawable/shape_card_15dp</item>
+    </style>
+
+    <!-- Input Component -->
+
+    <style name="edit_text_filed_style">
         <item name="background">@drawable/shape_rounded_rect_60dp</item>
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/pretendard_regular</item>
         <item name="android:inputType">text</item>
+        <item name="android:textColor">@color/Black700</item>
+        <item name="hintTextColor">@color/Blue500</item>
     </style>
 
-    <style name="search_style">
+    <style name="text_field_style">
+        <item name="background">@drawable/shape_rounded_rect_15dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textColor">@color/Black700</item>
+    </style>
+
+    <style name="search_text_filed_style">
         <item name="background">@drawable/shape_rounded_rect_20dp</item>
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/pretendard_regular</item>
         <item name="android:inputType">text</item>
+        <item name="android:textColor">@color/Black700</item>
+        <item name="hintTextColor">@color/white</item>
     </style>
+
+    <!-- Navigation Component -->
 
     <style name="tab_style">
-        <item name="background">@drawable/shape_rounded_rect_24dp</item>
+        <item name="background">@drawable/shape_rounded_rect_60dp</item>
     </style>
 
+    <!-- Selection Component -->
+
     <style name="spinner_drop_down_style">
-        <item name="background">@drawable/shape_card_15dp</item>
+        <item name="background">@drawable/shape_rounded_rect_8dp</item>
     </style>
 
 </resources>
