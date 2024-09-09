@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- H1_semi_bold_24 -->
+    <style name="h1_semi_bold_24">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <!-- H2_semi_bold_18 -->
+    <style name="h2_semi_bold_18">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- H3_semi_bold_14 -->
+    <style name="h3_semi_bold_14">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- h4_medium_16 -->
+    <style name="h4_medium_16">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- body1_medium_14 -->
+    <style name="body1_medium_14">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- body2_regular_14-->
+    <style name="body2_regular_14">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- body3_regular_12-->
+    <style name="body_regular_12">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textColor">@color/Black_700</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

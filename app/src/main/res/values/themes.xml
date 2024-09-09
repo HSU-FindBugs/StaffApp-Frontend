@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FindBug" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:fontFamily">@font/base_font</item>
+
+        <!-- Status Bar (핸드폰 맨 위 부분 -> true: 검정, false: 흰색)  -->
+    <!--<item name="android:statusBarColor">@color/Purple_Black_BG_1</item>-->
+        <item name="android:buttonStyle">@style/Widget.AppTheme.Button</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.FindBug" parent="Base.Theme.FindBug" />
+
+    <!--  ImageView Style (원형) -->
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- 버튼 ripple 효과 -->
+    <style name="Widget.AppTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+</resources>

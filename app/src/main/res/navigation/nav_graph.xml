@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.findbug.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- 고객 관리 홈 -->
+    <fragment
+        android:id="@+id/customerHomeFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerHomeFragment"
+        android:label="CustomerHomeFragment"
+        tools:layout="@layout/fragment_customer_home"/>
+
+    <!-- 알림 홈 -->
+    <fragment
+        android:id="@+id/notificationHomeFragment"
+        android:name="com.example.findbug.ui.notification.NotificationHomeFragment"
+        android:label="NotificationHomeFragment"
+        tools:layout="@layout/fragment_notification_home"/>
+
+    <!-- 계정 홈 -->
+    <fragment
+        android:id="@+id/profileHomeFragment"
+        android:name="com.example.findbug.ui.profile.ProfileHomeFragment"
+        android:label="ProfileHomeFragment"
+        tools:layout="@layout/fragment_profile_home"/>
+</navigation>

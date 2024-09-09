@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- margin -->
+    <dimen name="start_margin">16dp</dimen>
+    <dimen name="end_margin">16dp</dimen>
+    
+    <!-- padding -->
+    <dimen name="start_padding">20dp</dimen>
+    <dimen name="end_padding">20dp</dimen>
+    <dimen name="top_padding_mini">8dp</dimen>
+    <dimen name="bottom_padding_mini">8dp</dimen>
+    <dimen name="start_padding_mini">24dp</dimen>
+    <dimen name="end_padding_mini">24dp</dimen>
+
+    <!-- Action Component -->
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button1_short_height">37dp</dimen>
+    <dimen name="button1_long_height">45dp</dimen>
+
+    <!-- Containment Component -->
+    <dimen name="list1_height">83dp</dimen>
+    <dimen name="list2_height">72dp</dimen>
+    <dimen name="list3_height">72dp</dimen>
+    <dimen name="cards_height">113dp</dimen>
+
+    <!-- Navigation Component -->
+    <dimen name="navigation_bar_height">60dp</dimen>
+    <dimen name="search_height">41dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+
+    <!-- Input Component -->
+    <dimen name="text_field_height">45dp</dimen>
+
+    <!-- Selection Component -->
+    <dimen name="drop_down_height">148dp</dimen>
+
+</resources>
