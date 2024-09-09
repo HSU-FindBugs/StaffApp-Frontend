@@ -5,6 +5,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColor">@color/Black700</item>
         <item name="android:fontFamily">@font/base_font</item>
 
         <!-- Status Bar (핸드폰 맨 위 부분 -> true: 검정, false: 흰색)  -->
