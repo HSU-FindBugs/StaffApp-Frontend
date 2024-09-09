@@ -1,22 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
-
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        android:layout_height="wrap_content">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="홈 프래그먼트"
-            android:textSize="50dp"/>
+            tools:context=".ui.home.HomeFragment">
+            
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/fragment_home_guideline_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/fragment_home_title_logo_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:src="@drawable/ic_title_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fragment_home_profile_iv"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginTop="24dp"
+                android:background="@color/Blue700"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_title_logo_iv" />
+
+            <TextView
+                android:id="@+id/fragment_home_name_tv"
+                style="@style/h2_semi_bold_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="박종범 컨설턴트"
+                app:layout_constraintStart_toEndOf="@+id/fragment_home_profile_iv"
+                app:layout_constraintTop_toTopOf="@+id/fragment_home_profile_iv" />
+
+            <TextView
+                android:id="@+id/fragment_home_work_address_tv"
+                style="@style/body_regular_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="경기도 하남시 00동"
+                app:layout_constraintStart_toStartOf="@+id/fragment_home_name_tv"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_name_tv" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_commute_btn"
+                style="@style/body1_medium_14"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="@dimen/end_margin"
+                android:foreground="@android:color/transparent"
+                android:background="@drawable/shape_rounded_rect_50dp"
+                android:text="출근하기"
+                android:textColor="@color/white"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fragment_home_name_tv" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_home_manage_cl"
+                android:layout_width="0dp"
+                android:layout_height="102dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/shape_rounded_rect_12dp"
+                android:backgroundTint="@color/Blue700"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_home_guideline_50"
+                app:layout_constraintHorizontal_bias="0.617"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_work_address_tv">
+
+                <TextView
+                    android:id="@+id/fragment_home_manage_region_tv"
+                    style="@style/body_regular_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="관리 지역"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_home_manage_address_tv"
+                    style="@style/h4_medium_16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="경기도 하남시 00동"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_home_customer_cl"
+                android:layout_width="0dp"
+                android:layout_height="102dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="@dimen/end_margin"
+                android:background="@drawable/shape_rounded_rect_12dp"
+                android:backgroundTint="@color/Blue700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/fragment_home_guideline_50"
+                app:layout_constraintTop_toTopOf="@+id/fragment_home_manage_cl">
+
+                <TextView
+                    android:id="@+id/fragment_home_customer_date_tv"
+                    style="@style/body_regular_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="9.02"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_home_customer_title_tv"
+                    style="@style/body_regular_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="고객 관리 건수"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_home_customer_date_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_customer_date_tv" />
+
+                <TextView
+                    android:id="@+id/fragment_home_total_customer_tv"
+                    style="@style/h4_medium_16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="77dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="총 47명"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/fragment_home_recent_bug_detect_tv"
+                style="@style/h3_semi_bold_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:text="최근 벌레 탐지 정보"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_customer_cl" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fragment_home_recent_bug_detect_cl"
+                android:layout_width="0dp"
+                android:layout_height="113dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginEnd="@dimen/end_margin"
+                android:background="@drawable/shape_card_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_tv">
+
+                <TextView
+                    android:id="@+id/fragment_home_recent_bug_detect_name_tv"
+                    style="@style/h2_semi_bold_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="김성민"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_home_recent_bug_detect_address_tv"
+                    style="@style/body1_medium_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="경기도 하남시 00동 00아파트 00동 00호"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_home_recent_bug_detect_name_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_name_tv" />
+
+                <TextView
+                    android:id="@+id/fragment_home_recent_bug_detect_date_tv"
+                    style="@style/h4_medium_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/start_margin"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="탐지일 2024. 09. 02"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_address_tv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/fragment_home_notice_tv"
+                style="@style/h3_semi_bold_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:text="공지사항"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_cl" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_home_notice_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginEnd="@dimen/end_margin"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_notice_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+  
+    </androidx.core.widget.NestedScrollView>
 </layout>
