@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/nav_home_selector"
+        android:icon="@drawable/selector_navi_home"
         android:title="홈"/>
     <item
         android:id="@+id/customerHomeFragment"
-        android:icon="@drawable/ic_customer_selector"
+        android:icon="@drawable/selector_navi_customer"
         android:title="고객관리"/>
     <item
         android:id="@+id/notificationHomeFragment"
-        android:icon="@drawable/ic_notification_selector"
+        android:icon="@drawable/selector_navi_notification"
         android:title="알림"/>
     <item
         android:id="@+id/profileHomeFragment"
-        android:icon="@drawable/ic_profile_selector"
+        android:icon="@drawable/selector_navi_profile"
         android:title="프로필"/>
 </menu>
