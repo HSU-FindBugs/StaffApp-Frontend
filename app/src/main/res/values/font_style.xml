@@ -15,11 +15,11 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <!-- H3_semi_bold_14 -->
-    <style name="h3_semi_bold_14">
+    <!-- H3_semi_bold_16 -->
+    <style name="h3_semi_bold_16">
         <item name="android:fontFamily">@font/pretendard_semibold</item>
         <item name="android:textColor">@color/Black700</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <!-- h4_medium_16 -->
@@ -27,6 +27,13 @@
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textColor">@color/Black700</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- body1_semibold_14 -->
+    <style name="body1_semibold_14">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textColor">@color/Black700</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <!-- body1_medium_14 -->
