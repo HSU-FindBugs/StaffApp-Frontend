@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/navigation_bar_height"
             app:menu="@menu/bottom_menu"
+            app:itemTextColor="@drawable/selector_navi_text_color"
             app:itemActiveIndicatorStyle="@android:color/transparent"
             app:itemBackground="@android:color/transparent"
             app:itemRippleColor="@android:color/transparent"
