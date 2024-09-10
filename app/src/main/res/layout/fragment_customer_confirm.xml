@@ -90,18 +90,36 @@
                     app:layout_constraintStart_toEndOf="@+id/fragment_customer_confirm_name_tv"
                     app:layout_constraintTop_toTopOf="@+id/fragment_customer_confirm_name_tv" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/fragment_customer_confirm_delete_btn"
-                    style="@style/button1_style"
+                <TextView
+                    android:id="@+id/fragment_customer_confirm_membership_date_tv"
+                    style="@style/body1_medium_14"
                     android:layout_width="60dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="20dp"
-                    android:backgroundTint="@color/Blue500"
-                    android:text="삭제"
-                    android:textColor="@color/white"
+                    android:layout_marginEnd="22dp"
+                    android:background="@drawable/shape_rounded_rect_80dp"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:text="D-34"
+                    android:textColor="@color/Blue700"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fragment_customer_confirm_visit_tv"
+                    style="@style/body1_medium_14"
+                    android:visibility="invisible"
+                    android:layout_width="85dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_rounded_rect_80dp"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:text="방문완료"
+                    android:textColor="@color/Blue700"
+                    app:layout_constraintEnd_toEndOf="@+id/fragment_customer_confirm_membership_date_tv"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_membership_date_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_membership_date_tv" />
 
                 <TextView
                     android:id="@+id/fragment_customer_confirm_phone_num_tv"
@@ -115,18 +133,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_name_tv" />
 
                 <TextView
-                    android:id="@+id/fragment_customer_confirm_membership_tv"
-                    style="@style/body2_regular_14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="6개월 멤버십"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/fragment_customer_confirm_phone_num_tv"
-                    app:layout_constraintStart_toEndOf="@+id/fragment_customer_confirm_phone_num_tv"
-                    app:layout_constraintTop_toTopOf="@+id/fragment_customer_confirm_phone_num_tv" />
-
-                <TextView
                     android:id="@+id/fragment_customer_confirm_address_tv"
                     style="@style/body2_regular_14"
                     android:layout_width="wrap_content"
@@ -138,32 +144,17 @@
                     app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_phone_num_tv" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/fragment_customer_confirm_visit_complete_btn"
-                style="@style/button1_style"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/Blue300"
-                android:text="저장하기"
-                android:textColor="@color/Blue500"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_info_cl" />
-
             <TextView
                 android:id="@+id/fragment_customer_confirm_service_title_tv"
                 style="@style/h3_semi_bold_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="고객 서비스 정보"
-                android:textColor="@color/Blue700"
                 android:layout_marginTop="40dp"
                 android:layout_marginStart="@dimen/start_margin"
+                android:text="고객 서비스 정보"
+                android:textColor="@color/Blue700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_visit_complete_btn" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_info_cl" />
 
             <ImageButton
                 android:id="@+id/fragment_customer_confirm_bug_sheet_ib"
