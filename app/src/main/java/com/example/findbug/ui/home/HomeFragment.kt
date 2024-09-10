@@ -5,19 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.findbug.R
+import com.example.findbug.base.BaseFragment
+import com.example.findbug.databinding.FragmentHomeBinding
+import com.example.findbug.utils.extension.navigateSafe
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setLayout() {
+        initButton()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    private fun initButton() {
+
+        // 고객 확인 프래그먼트 가는 임시 버튼
+        binding.fragmentCommuteBtn.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToCustomerConfirmFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
     }
 
 }

@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.findbug.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_customerConfirmFragment"
+            app:destination="@id/customerConfirmFragment" />
+    </fragment>
 
     <!-- 고객 관리 홈 -->
     <fragment
@@ -31,4 +35,11 @@
         android:name="com.example.findbug.ui.profile.ProfileHomeFragment"
         android:label="ProfileHomeFragment"
         tools:layout="@layout/fragment_profile_home"/>
+
+    <fragment
+        android:id="@+id/customerConfirmFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerConfirmFragment"
+        android:label="CustomerConfirmFragment"
+        tools:layout="@layout/fragment_customer_confirm"/>
+
 </navigation>
