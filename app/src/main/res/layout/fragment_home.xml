@@ -35,14 +35,14 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/fragment_home_profile_iv"
-                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="@dimen/start_margin"
                 android:layout_marginTop="24dp"
                 android:background="@color/Blue700"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_home_title_logo_iv" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_title_logo_iv"
+                app:shapeAppearance="@style/Circle"/>
 
             <TextView
                 android:id="@+id/fragment_home_name_tv"
