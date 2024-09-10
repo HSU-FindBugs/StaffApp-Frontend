@@ -17,7 +17,7 @@
     <style name="Theme.FindBug" parent="Base.Theme.FindBug" />
 
     <!--  ImageView Style (원형) -->
-    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+    <style name="Circle">
         <item name="cornerSize">50%</item>
     </style>
 
