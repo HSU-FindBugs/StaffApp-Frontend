@@ -9,18 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="com.example.findbug.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_customerConfirmFragment"
-            app:destination="@id/customerConfirmFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <!-- 고객 관리 홈 -->
     <fragment
         android:id="@+id/customerHomeFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerHomeFragment"
         android:label="CustomerHomeFragment"
-        tools:layout="@layout/fragment_customer_home"/>
+        tools:layout="@layout/fragment_customer_home">
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerConfirmFragment"
+            app:destination="@id/customerConfirmFragment" />
+    </fragment>
 
     <!-- 알림 홈 -->
     <fragment
@@ -36,10 +36,39 @@
         android:label="ProfileHomeFragment"
         tools:layout="@layout/fragment_profile_home"/>
 
+    <!-- 고객관리 - 고객 확인 -->
     <fragment
         android:id="@+id/customerConfirmFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerConfirmFragment"
         android:label="CustomerConfirmFragment"
-        tools:layout="@layout/fragment_customer_confirm"/>
+        tools:layout="@layout/fragment_customer_confirm">
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerReportFragment"
+            app:destination="@id/customerReportFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_pestLogFragment"
+            app:destination="@id/pestLogFragment" />
+    </fragment>
+
+    <!-- 고객관리 - 고객 등록/수정 -->
+    <fragment
+        android:id="@+id/customerUpsertFragment"
+        android:name="com.example.findbug.ui.customer_manage.vp.CustomerUpsertFragment"
+        android:label="CustomerUpsertFragment"
+        tools:layout="@layout/fragment_customer_upsert"/>
+
+    <!-- 고객관리 - 고객 특이사항 작성 -->
+    <fragment
+        android:id="@+id/customerReportFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerReportFragment"
+        android:label="CustomerReportFragment"
+        tools:layout="@layout/fragment_customer_report"/>
+
+    <!-- 고객관리 - 해충 기록 -->
+    <fragment
+        android:id="@+id/pestLogFragment"
+        android:name="com.example.findbug.ui.customer_manage.pest.PestLogFragment"
+        android:label="PestLogFragment"
+        tools:layout="@layout/item_pest_list"/>
 
 </navigation>

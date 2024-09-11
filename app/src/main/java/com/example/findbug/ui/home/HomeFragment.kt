@@ -1,6 +1,7 @@
 package com.example.findbug.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,8 +22,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         // 고객 확인 프래그먼트 가는 임시 버튼
         binding.fragmentCommuteBtn.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToCustomerConfirmFragment()
-            findNavController().navigateSafe(action.actionId)
+            Log.d("로그","heel")
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,12 +12,55 @@
         android:layout_height="match_parent"
         tools:context=".ui.customer_manage.CustomerHomeFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="고객관리 홈 프래그먼트"
-            android:textSize="50dp" />
+            android:id="@+id/fragment_customer_home_title_tv"
+            style="@style/h1_semi_bold_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:text="고객관리"
+            android:textColor="@color/Blue700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_customer_home_address_tv"
+            style="@style/body2_regular_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="경기도 하남시 강북동"
+            android:textColor="@color/Blue500"
+            app:layout_constraintStart_toStartOf="@+id/fragment_customer_home_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_home_title_tv" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/fragment_customer_home_tab"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginEnd="@dimen/end_margin"
+            android:background="@drawable/shape_rounded_rect_24dp"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabIndicatorHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_home_address_tv" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/fragment_customer_home_vp2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/end_margin"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_home_tab" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

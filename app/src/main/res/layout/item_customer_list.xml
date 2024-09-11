@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="12dp"
+        style="@style/list1_style">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/item_customer_list_iv"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/Circle"/>
+
+        <TextView
+            android:id="@+id/item_customer_list_title_tv"
+            style="@style/h3_semi_bold_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="박종범"
+            app:layout_constraintStart_toEndOf="@+id/item_customer_list_iv"
+            app:layout_constraintTop_toTopOf="@+id/item_customer_list_iv" />
+
+        <TextView
+            android:id="@+id/item_customer_list_time_tv"
+            style="@style/body2_regular_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginStart="8dp"
+            android:text="탐지일 2024. 09. 02"
+            android:textColor="@color/Blue500"
+            app:layout_constraintStart_toEndOf="@+id/item_customer_list_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/item_customer_list_title_tv" />
+
+        <TextView
+            android:id="@+id/item_customer_list_desc_tv"
+            style="@style/body2_regular_14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="9dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="경기도 하남시 00동 00아파트 00동 00호"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_customer_list_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/item_customer_list_title_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
