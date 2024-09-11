@@ -24,10 +24,10 @@ class CustomerHomeFragment : BaseFragment<FragmentCustomerHomeBinding>(R.layout.
     }
 
     private fun initSettings() {
-        setTabLayout()
+        initTabLayout()
     }
 
-    private fun setTabLayout() {
+    private fun initTabLayout() {
 
         val tabLayout = binding.fragmentCustomerHomeTab
         val viewPager = binding.fragmentCustomerHomeVp2
