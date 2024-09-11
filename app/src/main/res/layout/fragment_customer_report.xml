@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.customer_manage.CustomerReportFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.customer_manage.CustomerReportFragment">
+
+           <include
+               android:id="@+id/fragment_customer_report_toolbar"
+               layout="@layout/toolbar_base"
+               app:toolbarTitle="@{`고객 특이사항`}"/>
+
+            <EditText
+                android:id="@+id/fragment_customer_report_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="240dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginEnd="@dimen/end_margin"
+                android:paddingTop="22dp"
+                android:paddingBottom="52dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="8dp"
+                android:gravity="top"
+                android:background="@drawable/shape_rounded_rect_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_customer_report_save_btn"
+                style="@style/button1_style"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginEnd="@dimen/end_margin"
+                android:text="@string/btn_save"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_report_et" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
