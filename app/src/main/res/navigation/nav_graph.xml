@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_customerReportFragment"
             app:destination="@id/customerReportFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_pestLogFragment"
+            app:destination="@id/pestLogFragment" />
     </fragment>
 
     <!-- 고객관리 - 고객 등록/수정 -->
@@ -60,5 +63,12 @@
         android:name="com.example.findbug.ui.customer_manage.CustomerReportFragment"
         android:label="CustomerReportFragment"
         tools:layout="@layout/fragment_customer_report"/>
+
+    <!-- 고객관리 - 해충 기록 -->
+    <fragment
+        android:id="@+id/pestLogFragment"
+        android:name="com.example.findbug.ui.customer_manage.pest.PestLogFragment"
+        android:label="PestLogFragment"
+        tools:layout="@layout/item_pest_list"/>
 
 </navigation>
