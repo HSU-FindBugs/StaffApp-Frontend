@@ -9,7 +9,7 @@
         <item name="android:fontFamily">@font/base_font</item>
 
         <!-- Status Bar (핸드폰 맨 위 부분 -> true: 검정, false: 흰색)  -->
-    <item name="android:statusBarColor">@color/white</item>
+    <item name="android:statusBarColor">@color/BG_Blue200</item>
         <item name="android:buttonStyle">@style/Widget.AppTheme.Button</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
