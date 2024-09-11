@@ -33,6 +33,11 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
             findNavController().navigateSafe(action.actionId)
         }
 
+        binding.fragmentCustomerConfirmBugSheetIb.setOnClickListener {
+            val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
+
     }
 
 }
