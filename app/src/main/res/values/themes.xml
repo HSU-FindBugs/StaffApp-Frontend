@@ -4,7 +4,7 @@
         <!-- Customize your light theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorBackground">@color/BG_Blue200</item>
         <item name="android:textColor">@color/Black700</item>
         <item name="android:fontFamily">@font/base_font</item>
 
