@@ -41,7 +41,11 @@
         android:id="@+id/customerConfirmFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerConfirmFragment"
         android:label="CustomerConfirmFragment"
-        tools:layout="@layout/fragment_customer_confirm"/>
+        tools:layout="@layout/fragment_customer_confirm">
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerReportFragment"
+            app:destination="@id/customerReportFragment" />
+    </fragment>
 
     <!-- 고객관리 - 고객 등록/수정 -->
     <fragment
@@ -49,5 +53,12 @@
         android:name="com.example.findbug.ui.customer_manage.vp.CustomerUpsertFragment"
         android:label="CustomerUpsertFragment"
         tools:layout="@layout/fragment_customer_upsert"/>
+
+    <!-- 고객관리 - 고객 특이사항 작성 -->
+    <fragment
+        android:id="@+id/customerReportFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerReportFragment"
+        android:label="CustomerReportFragment"
+        tools:layout="@layout/fragment_customer_report"/>
 
 </navigation>
