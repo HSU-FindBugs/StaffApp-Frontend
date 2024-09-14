@@ -14,7 +14,7 @@
         tools:context=".ui.customer_manage.pest.PestLogListFragment">
 
         <include
-            android:id="@+id/fragment_pest_log_toolbar"
+            android:id="@+id/fragment_pest_log_list_toolbar"
             layout="@layout/toolbar_base"
             app:toolbarTitle="@{`해충 기록`}"/>
 
