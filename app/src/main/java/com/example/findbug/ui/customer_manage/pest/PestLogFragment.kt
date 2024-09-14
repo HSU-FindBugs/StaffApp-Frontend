@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentPestLogBinding
@@ -13,11 +14,18 @@ import com.example.findbug.databinding.FragmentPestLogBinding
 class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log) {
 
     override fun setLayout() {
-        Log.d("로그","로그")
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.Blue300)
+        initSettings()
     }
 
     private fun initSettings() {
+        initButton()
+    }
 
+    private fun initButton() {
+        binding.fragmentPestLogPestShowVideoBtn.setOnClickListener {
+            Log.d("로그", "로그")
+        }
     }
 
 }
