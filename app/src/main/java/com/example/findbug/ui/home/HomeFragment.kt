@@ -20,9 +20,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun initButton() {
 
-        // 고객 확인 프래그먼트 가는 임시 버튼
+        // 해충 기록 화면 가는 임시 버튼
         binding.fragmentCommuteBtn.setOnClickListener {
-            Log.d("로그","heel")
+            val action = HomeFragmentDirections.actionHomeFragmentToPestLogFragment()
+            findNavController().navigateSafe(action.actionId)
         }
     }
 
