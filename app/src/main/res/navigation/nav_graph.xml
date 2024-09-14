@@ -67,7 +67,7 @@
     <!-- 고객관리 - 해충 기록 -->
     <fragment
         android:id="@+id/pestLogFragment"
-        android:name="com.example.findbug.ui.customer_manage.pest.PestLogFragment"
+        android:name="com.example.findbug.ui.customer_manage.pest.PestLogListFragment"
         android:label="PestLogFragment"
         tools:layout="@layout/item_pest_list"/>
 

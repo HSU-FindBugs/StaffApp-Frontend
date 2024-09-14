@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.customer_manage.pest.PestLogFragment">
+        tools:context=".ui.customer_manage.pest.PestLogListFragment">
 
         <include
             android:id="@+id/fragment_pest_log_toolbar"
