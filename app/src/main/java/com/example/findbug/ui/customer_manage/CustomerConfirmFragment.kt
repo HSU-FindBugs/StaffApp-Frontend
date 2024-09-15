@@ -55,7 +55,8 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
 
             // 카메라 추가 화면으로 이동하는 버튼
             fragmentCustomerConfirmAddCameraIb.setOnClickListener {
-
+                val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerAddCameraFragment()
+                findNavController().navigateSafe(action.actionId)
             }
         }
 
