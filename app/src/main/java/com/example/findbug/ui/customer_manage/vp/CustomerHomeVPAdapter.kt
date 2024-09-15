@@ -14,7 +14,7 @@ class CustomerHomeVPAdapter(fm: FragmentManager, lifecycle: Lifecycle): Fragment
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> CustomerFindFragment()
-            1 -> CustomerUpsertFragment()
+            1 -> CustomerAddCustomerFragment()
             else -> throw IllegalStateException("Invalid tab position")
         }
     }
