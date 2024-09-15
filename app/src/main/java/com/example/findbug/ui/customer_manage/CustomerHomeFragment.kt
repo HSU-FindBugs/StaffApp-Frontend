@@ -48,7 +48,7 @@ class CustomerHomeFragment : BaseFragment<FragmentCustomerHomeBinding>(R.layout.
                     customView?.setBackgroundResource(R.drawable.tab_selected_first)
                 }
                 1 -> {
-                    tabText.text = "등록/수정"
+                    tabText.text = "고객 등록"
                     tabIcon.setImageResource(R.drawable.ic_add_customer_black)
                 }
             }
