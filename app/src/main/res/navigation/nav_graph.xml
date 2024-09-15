@@ -61,13 +61,16 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_customerAddCameraFragment"
             app:destination="@id/customerAddCameraFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerInfoEditFragment"
+            app:destination="@id/customerInfoEditFragment" />
     </fragment>
 
-    <!-- 고객관리 - 고객 등록/수정 -->
+    <!-- 고객관리 - 고객 정보 등록 -->
     <fragment
-        android:id="@+id/customerUpsertFragment"
+        android:id="@+id/addCustomerFragment"
         android:name="com.example.findbug.ui.customer_manage.vp.CustomerAddCustomerFragment"
-        android:label="CustomerUpsertFragment"
+        android:label="AddCustomerFragment"
         tools:layout="@layout/fragment_add_customer"/>
 
     <!-- 고객관리 - 고객 특이사항 작성 -->
@@ -111,5 +114,12 @@
         android:name="com.example.findbug.ui.customer_manage.CustomerAddCameraFragment"
         android:label="CustomerAddCameraFragment"
         tools:layout="@layout/fragment_customer_add_camera"/>
+
+    <!-- 고객관리 - 고객 정보 수정 -->
+    <fragment
+        android:id="@+id/customerInfoEditFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerInfoEditFragment"
+        android:label="CustomerInfoEditFragment"
+        tools:layout="@layout/fragment_customer_info_edit"/>
 
 </navigation>
