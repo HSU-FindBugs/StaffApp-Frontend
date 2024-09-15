@@ -12,11 +12,24 @@
         android:layout_height="match_parent"
         tools:context=".ui.customer_manage.detection.DetectionVideoListFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+        <include
+            android:id="@+id/fragment_detection_video_list_toolbar"
+            layout="@layout/toolbar_base"
+            app:toolbarTitle="@{`감지 영상`}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_detection_video_list_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginEnd="@dimen/end_margin"
+            tools:listitem="@layout/item_pest_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
