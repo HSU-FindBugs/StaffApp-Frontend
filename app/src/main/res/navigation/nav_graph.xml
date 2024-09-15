@@ -11,9 +11,6 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_pestLogListFragment"
-            app:destination="@id/pestLogListFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_pestLogFragment"
             app:destination="@id/pestLogFragment" />
     </fragment>
@@ -55,6 +52,12 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_pestLogFragment"
             app:destination="@id/pestLogFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_pestLogListFragment"
+            app:destination="@id/pestLogListFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_detectionVideoListFragment"
+            app:destination="@id/detectionVideoListFragment" />
     </fragment>
 
     <!-- 고객관리 - 고객 등록/수정 -->
@@ -84,5 +87,12 @@
         android:name="com.example.findbug.ui.customer_manage.pest.PestLogFragment"
         android:label="PestLogFragment"
         tools:layout="@layout/fragment_pest_log"/>
+
+    <!-- 고객관리 - 감지 영상 목록 -->
+    <fragment
+        android:id="@+id/detectionVideoListFragment"
+        android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoListFragment"
+        android:label="DetectionVideoListFragment"
+        tools:layout="@layout/fragment_detection_video_list"/>
 
 </navigation>
