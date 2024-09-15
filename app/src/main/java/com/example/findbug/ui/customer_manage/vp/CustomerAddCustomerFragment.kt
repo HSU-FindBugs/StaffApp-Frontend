@@ -5,8 +5,8 @@ import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentCustomerUpsertBinding
 
-class CustomerUpsertFragment :
-    BaseFragment<FragmentCustomerUpsertBinding>(R.layout.fragment_customer_upsert) {
+class CustomerAddCustomerFragment :
+    BaseFragment<FragmentCustomerUpsertBinding>(R.layout.fragment_add_customer) {
 
     override fun setLayout() {
         initSettings()

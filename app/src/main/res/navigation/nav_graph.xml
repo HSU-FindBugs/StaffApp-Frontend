@@ -66,9 +66,9 @@
     <!-- 고객관리 - 고객 등록/수정 -->
     <fragment
         android:id="@+id/customerUpsertFragment"
-        android:name="com.example.findbug.ui.customer_manage.vp.CustomerUpsertFragment"
+        android:name="com.example.findbug.ui.customer_manage.vp.CustomerAddCustomerFragment"
         android:label="CustomerUpsertFragment"
-        tools:layout="@layout/fragment_customer_upsert"/>
+        tools:layout="@layout/fragment_add_customer"/>
 
     <!-- 고객관리 - 고객 특이사항 작성 -->
     <fragment

@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.customer_manage.vp.CustomerUpsertFragment">
+            tools:context=".ui.customer_manage.vp.CustomerAddCustomerFragment">
 
             <TextView
                 android:id="@+id/fragment_customer_upsert_name_tv"
@@ -96,7 +96,7 @@
                 style="@style/text_field_style"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/shape_rounded_rect_60dp"
                 android:backgroundTint="@color/Blue300"
                 android:hint="고객님의 상세 주소를 입력하세요."
@@ -172,7 +172,6 @@
                 android:layout_marginTop="38dp"
                 android:layout_marginBottom="30dp"
                 android:text="@string/btn_save"
-                android:fontFamily=""
                 android:textColor="@color/Blue500"
                 android:background="@drawable/shape_rounded_rect_50dp"
                 android:backgroundTint="@color/Blue300"
