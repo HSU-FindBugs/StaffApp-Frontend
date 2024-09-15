@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.customer_manage.CustomerHomeFragment">
+        tools:context=".ui.customer_manage.vp.CustomerHomeFragment">
 
         <TextView
             android:id="@+id/fragment_customer_home_title_tv"

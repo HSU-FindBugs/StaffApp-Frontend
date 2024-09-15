@@ -1,19 +1,14 @@
-package com.example.findbug.ui.customer_manage
+package com.example.findbug.ui.customer_manage.vp
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.viewpager.widget.ViewPager
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentCustomerHomeBinding
-import com.example.findbug.ui.customer_manage.vp.CustomerHomeVPAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

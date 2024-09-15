@@ -18,7 +18,7 @@
     <!-- 고객 관리 홈 -->
     <fragment
         android:id="@+id/customerHomeFragment"
-        android:name="com.example.findbug.ui.customer_manage.CustomerHomeFragment"
+        android:name="com.example.findbug.ui.customer_manage.vp.CustomerHomeFragment"
         android:label="CustomerHomeFragment"
         tools:layout="@layout/fragment_customer_home">
         <action
