@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_detectionVideoListFragment"
             app:destination="@id/detectionVideoListFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerAddCameraFragment"
+            app:destination="@id/customerAddCameraFragment" />
     </fragment>
 
     <!-- 고객관리 - 고객 등록/수정 -->
@@ -101,5 +104,12 @@
         android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoShowFragment"
         android:label="DetectionVideoShowFragment"
         tools:layout="@layout/fragment_detection_video_show"/>
+
+    <!-- 고객관리 - 카메라 등록 -->
+    <fragment
+        android:id="@+id/customerAddCameraFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerAddCameraFragment"
+        android:label="CustomerAddCameraFragment"
+        tools:layout="@layout/fragment_customer_add_camera"/>
 
 </navigation>
