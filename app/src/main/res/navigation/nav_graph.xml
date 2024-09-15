@@ -95,4 +95,11 @@
         android:label="DetectionVideoListFragment"
         tools:layout="@layout/fragment_detection_video_list"/>
 
+    <!-- 고객관리 - 감지 영상 보기 -->
+    <fragment
+        android:id="@+id/detectionVideoShowFragment"
+        android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoShowFragment"
+        android:label="DetectionVideoShowFragment"
+        tools:layout="@layout/fragment_detection_video_show"/>
+
 </navigation>
