@@ -11,9 +11,6 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_pestLogListFragment"
-            app:destination="@id/pestLogListFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_pestLogFragment"
             app:destination="@id/pestLogFragment" />
     </fragment>
@@ -21,7 +18,7 @@
     <!-- 고객 관리 홈 -->
     <fragment
         android:id="@+id/customerHomeFragment"
-        android:name="com.example.findbug.ui.customer_manage.CustomerHomeFragment"
+        android:name="com.example.findbug.ui.customer_manage.vp.CustomerHomeFragment"
         android:label="CustomerHomeFragment"
         tools:layout="@layout/fragment_customer_home">
         <action
@@ -55,14 +52,26 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_pestLogFragment"
             app:destination="@id/pestLogFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_pestLogListFragment"
+            app:destination="@id/pestLogListFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_detectionVideoListFragment"
+            app:destination="@id/detectionVideoListFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerAddCameraFragment"
+            app:destination="@id/customerAddCameraFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerInfoEditFragment"
+            app:destination="@id/customerInfoEditFragment" />
     </fragment>
 
-    <!-- 고객관리 - 고객 등록/수정 -->
+    <!-- 고객관리 - 고객 정보 등록 -->
     <fragment
-        android:id="@+id/customerUpsertFragment"
-        android:name="com.example.findbug.ui.customer_manage.vp.CustomerUpsertFragment"
-        android:label="CustomerUpsertFragment"
-        tools:layout="@layout/fragment_customer_upsert"/>
+        android:id="@+id/addCustomerFragment"
+        android:name="com.example.findbug.ui.customer_manage.vp.CustomerAddCustomerFragment"
+        android:label="AddCustomerFragment"
+        tools:layout="@layout/fragment_add_customer"/>
 
     <!-- 고객관리 - 고객 특이사항 작성 -->
     <fragment
@@ -84,5 +93,33 @@
         android:name="com.example.findbug.ui.customer_manage.pest.PestLogFragment"
         android:label="PestLogFragment"
         tools:layout="@layout/fragment_pest_log"/>
+
+    <!-- 고객관리 - 감지 영상 목록 -->
+    <fragment
+        android:id="@+id/detectionVideoListFragment"
+        android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoListFragment"
+        android:label="DetectionVideoListFragment"
+        tools:layout="@layout/fragment_detection_video_list"/>
+
+    <!-- 고객관리 - 감지 영상 보기 -->
+    <fragment
+        android:id="@+id/detectionVideoShowFragment"
+        android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoShowFragment"
+        android:label="DetectionVideoShowFragment"
+        tools:layout="@layout/fragment_detection_video_show"/>
+
+    <!-- 고객관리 - 카메라 등록 -->
+    <fragment
+        android:id="@+id/customerAddCameraFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerAddCameraFragment"
+        android:label="CustomerAddCameraFragment"
+        tools:layout="@layout/fragment_customer_add_camera"/>
+
+    <!-- 고객관리 - 고객 정보 수정 -->
+    <fragment
+        android:id="@+id/customerInfoEditFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerInfoEditFragment"
+        android:label="CustomerInfoEditFragment"
+        tools:layout="@layout/fragment_customer_info_edit"/>
 
 </navigation>

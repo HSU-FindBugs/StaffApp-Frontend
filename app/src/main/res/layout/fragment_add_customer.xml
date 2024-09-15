@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".ui.customer_manage.vp.CustomerUpsertFragment">
+            tools:context=".ui.customer_manage.vp.CustomerAddCustomerFragment">
 
             <TextView
                 android:id="@+id/fragment_customer_upsert_name_tv"
@@ -96,7 +96,7 @@
                 style="@style/text_field_style"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/shape_rounded_rect_60dp"
                 android:backgroundTint="@color/Blue300"
                 android:hint="고객님의 상세 주소를 입력하세요."
@@ -116,18 +116,53 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_detail_address_et" />
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/fragment_customer_upsert_spinner"
+            <RadioGroup
+                android:id="@+id/fragment_customer_upsert_radio_group"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/spinner_bg"
-                android:popupBackground="@drawable/shape_rounded_rect_spinner_bg_8dp_blue300"
-                android:dropDownWidth="match_parent"
-                android:dropDownVerticalOffset="200dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_membership_tv"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_membership_tv" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/fragment_customer_upsert_1month_radio_btn"
+                        android:buttonTint="@color/Blue500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="1개월"/>
+
+                    <RadioButton
+                        android:id="@+id/fragment_customer_upsert_3month_radio_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
+                        android:buttonTint="@color/Blue500"
+                        android:text="3개월"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioButton
+                        android:id="@+id/fragment_customer_upsert_6month_radio_btn"
+                        android:buttonTint="@color/Blue500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="6개월"/>
+
+                    <RadioButton
+                        android:id="@+id/fragment_customer_upsert_1year_radio_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
+                        android:buttonTint="@color/Blue500"
+                        android:text="1년"
+                        app:layout_constraintTop_toTopOf="parent" />
+            </RadioGroup>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/fragment_customer_upsert_save_btn"
@@ -137,15 +172,13 @@
                 android:layout_marginTop="38dp"
                 android:layout_marginBottom="30dp"
                 android:text="@string/btn_save"
-                android:fontFamily=""
                 android:textColor="@color/Blue500"
                 android:background="@drawable/shape_rounded_rect_50dp"
                 android:backgroundTint="@color/Blue300"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_spinner" />
-
+                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_radio_group" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

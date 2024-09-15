@@ -1,4 +1,4 @@
-package com.example.findbug.ui.customer_manage.pest
+package com.example.findbug.ui.customer_manage
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
-import com.example.findbug.databinding.FragmentPestLogBinding
+import com.example.findbug.databinding.FragmentCustomerAddCameraBinding
 
-class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log) {
+class CustomerAddCameraFragment : BaseFragment<FragmentCustomerAddCameraBinding>(R.layout.fragment_customer_add_camera) {
 
     override fun onPause() {
         super.onPause()
@@ -19,18 +19,15 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
     }
 
     override fun setLayout() {
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.Blue300)
-        initSettings()
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
     }
 
     private fun initSettings() {
-        initButton()
+        Log.d("로그", "로그")
     }
 
-    private fun initButton() {
-        binding.fragmentPestLogPestShowVideoBtn.setOnClickListener {
-            Log.d("로그", "로그")
-        }
+    private fun initEditText() {
+
     }
 
 }
