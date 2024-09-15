@@ -121,22 +121,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_membership_tv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
-
-                <!-- 첫 번째 줄 -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/fragment_customer_upsert_guideline_35"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_percent="0.45"/>
 
                     <RadioButton
                         android:id="@+id/fragment_customer_upsert_1month_radio_btn"
@@ -145,53 +133,37 @@
                         android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="1개월 멤버십"/>
+                        android:text="1개월"/>
 
                     <RadioButton
                         android:id="@+id/fragment_customer_upsert_3month_radio_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
                         android:buttonTint="@color/Blue500"
-                        android:text="3개월 멤버십"
-                        app:layout_constraintStart_toStartOf="@id/fragment_customer_upsert_guideline_35"
+                        android:text="3개월"
                         app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!-- 두 번째 줄 -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/fragment_customer_upsert_guideline_35_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintGuide_percent="0.45"/>
 
                     <RadioButton
                         android:id="@+id/fragment_customer_upsert_6month_radio_btn"
                         android:buttonTint="@color/Blue500"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="6개월 멤버십"/>
+                        android:text="6개월"/>
 
                     <RadioButton
                         android:id="@+id/fragment_customer_upsert_1year_radio_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/start_margin"
                         android:buttonTint="@color/Blue500"
-                        android:text="1년 멤버십"
-                        app:layout_constraintStart_toStartOf="@id/fragment_customer_upsert_guideline_35_2"
+                        android:text="1년"
                         app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </RadioGroup>
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/fragment_customer_upsert_save_btn"
