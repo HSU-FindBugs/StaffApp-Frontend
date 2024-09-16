@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_card_15dp"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:id="@+id/dialog_style_notice_title_tv"
+            style="@style/body1_medium_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginEnd="96dp"
+            android:text="공지사항"
+            android:textColor="@color/Blue700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog_style_notice_subtitle_tv"
+            style="@style/h3_semi_bold_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="업데이트 공지"
+            app:layout_constraintEnd_toEndOf="@+id/dialog_style_notice_title_tv"
+            app:layout_constraintStart_toStartOf="@+id/dialog_style_notice_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_style_notice_title_tv" />
+
+        <TextView
+            android:id="@+id/dialog_style_notice_content_tv"
+            style="@style/body1_medium_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/notice"
+            android:textColor="#6D6D6D"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_style_notice_subtitle_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_style_notice_yes_btn"
+            style="@style/body1_medium_14"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="26dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginEnd="@dimen/end_margin"
+            android:background="@drawable/shape_rounded_rect_8dp"
+            android:backgroundTint="@color/Blue700"
+            android:text="확인"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_style_notice_content_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
