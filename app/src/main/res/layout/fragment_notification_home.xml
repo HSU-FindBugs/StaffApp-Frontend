@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,12 +12,33 @@
         android:layout_height="match_parent"
         tools:context=".ui.notification.NotificationHomeFragment">
 
-        <!-- TODO: Update blank fragment layout -->
+        <include
+            android:id="@+id/fragment_customer_add_camera_toolbar"
+            layout="@layout/toolbar_base"
+            app:toolbarTitle="@{`알림`}" />
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="알림 홈 프래그먼트"
-            android:textSize="50dp" />
+            android:id="@+id/fragment_notification_home_title_tv"
+            style="@style/h1_semi_bold_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:text="알림 전체"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_notification_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_notification_home_title_tv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

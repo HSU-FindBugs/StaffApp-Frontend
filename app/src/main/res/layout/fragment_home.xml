@@ -242,15 +242,17 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/fragment_home_notice_rv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/start_margin"
                 android:layout_marginEnd="@dimen/end_margin"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_notices"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_home_notice_tv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_notice_tv"
+                tools:listitem="@layout/item_notices" />
             
         </androidx.constraintlayout.widget.ConstraintLayout>
   

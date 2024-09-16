@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.customer_manage.CustomerSearchFragment">
+
+        <include
+            android:id="@+id/fragment_customer_search_toolbar"
+            layout="@layout/toolbar_base"
+            app:toolbarTitle="@{`고객 특이사항`}"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_customer_search_cl"
+            android:layout_width="0dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginEnd="@dimen/end_margin"
+            android:background="@drawable/shape_rounded_rect_15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/fragment_customer_search_title_tv"
+                style="@style/h3_semi_bold_16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="고객의 정보를 입력하세요"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_rounded_rect_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_customer_search_title_tv">
+
+                <EditText
+                    android:id="@+id/fragment_customer_search_et"
+                    style="@style/body2_regular_14"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="검색하기"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/Black700"
+                    android:inputType="text"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_customer_search_ib"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/fragment_customer_search_ib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_search_white"
+                    app:layout_constraintBottom_toBottomOf="@+id/fragment_customer_search_et"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fragment_customer_search_et" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:visibility="visible"
+            android:id="@+id/fragment_customer_search_empty_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_no_recent_search_blue500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_search_cl" />
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/fragment_customer_search_empty_tv"
+            style="@style/h4_medium_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="최근 검색어가 없습니다"
+            android:textColor="@color/Blue500"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_customer_search_empty_iv"
+            app:layout_constraintStart_toStartOf="@+id/fragment_customer_search_empty_iv"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_search_empty_iv" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/fragment_customer_recent_search_tv"
+            style="@style/h3_semi_bold_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:text="최근 검색한 고객"
+            android:textColor="@color/Blue700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_search_cl" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/fragment_customer_recent_search_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginEnd="@dimen/end_margin"
+            tools:listitem="@layout/item_recent_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_customer_recent_search_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
