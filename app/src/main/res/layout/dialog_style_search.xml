@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="236dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rounded_rect_20dp"
+    android:backgroundTint="@color/white">
+
+    <TextView
+        android:id="@+id/dialog_style_search_title_tv"
+        style="@style/h2_semi_bold_18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="검색되지 않는 단어입니다"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_style_search_content_tv"
+        style="@style/body2_regular_14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="검색어의 철자를 확인하거나\n다른 검색어를 사용해주세요."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/dialog_style_search_title_tv"
+        app:layout_constraintStart_toStartOf="@+id/dialog_style_search_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_style_search_title_tv" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialog_style_search_yes_btn"
+        style="@style/h4_medium_16"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/shape_button_radius_bottom"
+        android:text="확인"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_style_search_content_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

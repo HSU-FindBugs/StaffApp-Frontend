@@ -6,12 +6,15 @@
     <!-- 버튼 -->
     <string name="btn_save">저장하기</string>
 
-    <!-- 스피너 리스트 -->
-    <string-array name="spinnerList">
-        <item>고객님의 멤버십 정보 선택</item>
-        <item>한달 멤버십</item>
-        <item>3개월 멤버십</item>
-        <item>6개월 멤버십</item>
-        <item>1년 멤버십</item>
-    </string-array>
+    <!-- 공지사항 더미 데이터 -->
+   <string name="notice">9.04 00:00~05:00까지\n업데이트가 진행되어 어플 사용이\n불가하니 양해 부탁드립니다.</string>
+
+    <!-- 다이얼로그 로그아웃 -->
+    <string name="dialog_logout_title">정말 로그아웃 하시겠어요?</string>
+    <string name="dialog_logout_content">로그아웃 하시면,\n다시 로그인하셔야 합니다.</string>
+
+    <!-- 다이얼로그 삭제 -->
+    <string name="dialog_delete_title">정말 삭제하시겠어요?</string>
+    <string name="dialog_delete_content">삭제 버튼 선택 시, 데이터가\n삭제되며 복구되지 않습니다.</string>
+
 </resources>
