@@ -27,11 +27,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun initButton() {
 
-        // 해충 기록 화면 가는 임시 버튼
-        binding.fragmentCommuteBtn.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToPestLogFragment()
-            findNavController().navigateSafe(action.actionId)
-        }
     }
 
 }

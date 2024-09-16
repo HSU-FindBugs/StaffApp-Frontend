@@ -37,9 +37,8 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
 
             // 해충 기록 화면으로 이동하는 버튼 (임시버튼)
             fragmentCustomerConfirmBugSheetIb.setOnClickListener {
-                val action =
-                    CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogFragment()
-                findNavController().navigateSafe(action.actionId)
+                //val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogFragment()
+                //findNavController().navigateSafe(action.actionId)
             }
 
             // 감지 영상 목록 화면으로 이동하는 버튼
