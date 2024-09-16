@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp">
+
+        <TextView
+            android:id="@+id/item_recent_search_tv"
+            style="@style/body1_medium_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rounded_rect_50dp_stoke_1dp"
+            android:paddingStart="@dimen/start_padding_mini"
+            android:paddingTop="@dimen/top_padding_mini"
+            android:paddingEnd="@dimen/end_padding_mini"
+            android:paddingBottom="@dimen/bottom_padding_mini"
+            android:text="박종범"
+            android:textColor="@color/Blue500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
