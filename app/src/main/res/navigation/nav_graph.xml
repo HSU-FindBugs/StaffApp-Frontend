@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_customerHomeFragment_to_customerConfirmFragment"
             app:destination="@id/customerConfirmFragment" />
+        <action
+            android:id="@+id/action_customerHomeFragment_to_customerSearchFragment"
+            app:destination="@id/customerSearchFragment" />
     </fragment>
 
     <!-- 알림 홈 -->
@@ -126,5 +129,12 @@
         android:name="com.example.findbug.ui.customer_manage.CustomerInfoEditFragment"
         android:label="CustomerInfoEditFragment"
         tools:layout="@layout/fragment_customer_info_edit"/>
+
+    <!-- 고객관리 - 고객 검색 -->
+    <fragment
+        android:id="@+id/customerSearchFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerSearchFragment"
+        android:label="CustomerSearchFragment"
+        tools:layout="@layout/fragment_customer_search"/>
 
 </navigation>
