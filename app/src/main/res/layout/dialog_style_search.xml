@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/dialog_style_search_title_tv"
         style="@style/h2_semi_bold_18"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="검색되지 않는 단어입니다"
