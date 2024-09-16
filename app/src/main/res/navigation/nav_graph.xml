@@ -9,11 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.findbug.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_pestLogFragment"
-            app:destination="@id/pestLogFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <!-- 고객 관리 홈 -->
     <fragment
@@ -33,12 +29,23 @@
         android:label="NotificationHomeFragment"
         tools:layout="@layout/fragment_notification_home"/>
 
-    <!-- 계정 홈 -->
+    <!-- 프로필 홈 -->
     <fragment
         android:id="@+id/profileHomeFragment"
         android:name="com.example.findbug.ui.profile.ProfileHomeFragment"
         android:label="ProfileHomeFragment"
-        tools:layout="@layout/fragment_profile_home"/>
+        tools:layout="@layout/fragment_profile_home">
+        <action
+            android:id="@+id/action_profileHomeFragment_to_changeWorkspaceFragment"
+            app:destination="@id/changeWorkspaceFragment" />
+    </fragment>
+
+    <!-- 프로필 - 근무 지역 변경 -->
+    <fragment
+        android:id="@+id/changeWorkspaceFragment"
+        android:name="com.example.findbug.ui.profile.ChangeWorkspaceFragment"
+        android:label="ChangeWorkspaceFragment"
+        tools:layout="@layout/fragment_change_workspace"/>
 
     <!-- 고객관리 - 고객 확인 -->
     <fragment
@@ -49,9 +56,6 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_customerReportFragment"
             app:destination="@id/customerReportFragment" />
-        <action
-            android:id="@+id/action_customerConfirmFragment_to_pestLogFragment"
-            app:destination="@id/pestLogFragment" />
         <action
             android:id="@+id/action_customerConfirmFragment_to_pestLogListFragment"
             app:destination="@id/pestLogListFragment" />
@@ -66,13 +70,6 @@
             app:destination="@id/customerInfoEditFragment" />
     </fragment>
 
-    <!-- 고객관리 - 고객 정보 등록 -->
-    <fragment
-        android:id="@+id/addCustomerFragment"
-        android:name="com.example.findbug.ui.customer_manage.vp.CustomerAddCustomerFragment"
-        android:label="AddCustomerFragment"
-        tools:layout="@layout/fragment_add_customer"/>
-
     <!-- 고객관리 - 고객 특이사항 작성 -->
     <fragment
         android:id="@+id/customerReportFragment"
@@ -85,7 +82,11 @@
         android:id="@+id/pestLogListFragment"
         android:name="com.example.findbug.ui.customer_manage.pest.PestLogListFragment"
         android:label="PestLogFragment"
-        tools:layout="@layout/item_pest_list"/>
+        tools:layout="@layout/item_pest_list">
+        <action
+            android:id="@+id/action_pestLogListFragment_to_pestLogFragment"
+            app:destination="@id/pestLogFragment" />
+    </fragment>
 
     <!-- 고객관리 - 해충 기록 -->
     <fragment
@@ -99,7 +100,11 @@
         android:id="@+id/detectionVideoListFragment"
         android:name="com.example.findbug.ui.customer_manage.detection.DetectionVideoListFragment"
         android:label="DetectionVideoListFragment"
-        tools:layout="@layout/fragment_detection_video_list"/>
+        tools:layout="@layout/fragment_detection_video_list">
+        <action
+            android:id="@+id/action_detectionVideoListFragment_to_detectionVideoShowFragment"
+            app:destination="@id/detectionVideoShowFragment" />
+    </fragment>
 
     <!-- 고객관리 - 감지 영상 보기 -->
     <fragment
