@@ -12,7 +12,7 @@ class BaseDiffCallback<T: Any>(
     }
 
     override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
-        return areItemsTheSame(oldItem, newItem)
+        return contentsTheSame(oldItem, newItem)
     }
 
 }
