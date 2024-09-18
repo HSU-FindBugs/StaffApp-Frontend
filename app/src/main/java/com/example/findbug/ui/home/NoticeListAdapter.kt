@@ -7,7 +7,7 @@ import com.example.findbug.databinding.ItemCustomerListBinding
 import com.example.findbug.utils.listener.RVClickListener
 
 // 홈 - 공지사항 리사이클러뷰 어탭터
-class NoticeListAdapter(private val clickListener: RVClickListener) : BaseAdapter<NoticeList, ItemCustomerListBinding>(
+class NoticeListAdapter(private val clickListener: RVClickListener) : BaseAdapter<DummyTest, ItemCustomerListBinding>(
     BaseDiffCallback (
         itemTheSame = { oldItem, newItem -> oldItem == newItem },
         contentsTheSame =  { oldItem, newItem -> oldItem == newItem }
@@ -16,7 +16,7 @@ class NoticeListAdapter(private val clickListener: RVClickListener) : BaseAdapte
     override val layoutId: Int
         get() = R.layout.item_customer_list
 
-    override fun bind(binding: ItemCustomerListBinding, item: NoticeList) {
+    override fun bind(binding: ItemCustomerListBinding, item: DummyTest) {
 
         binding.root.setOnClickListener {
             clickListener.onItemClick(item)
