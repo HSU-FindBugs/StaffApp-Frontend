@@ -8,7 +8,7 @@ import com.example.findbug.ui.home.DummyTest
 import com.example.findbug.utils.listener.RVClickListener
 
 // 고객 관리 - 홈 (탭1) - 고객 목록 리사이클러뷰 어댑터
-class CustomerListAdapter(private val clickListener: RVClickListener): BaseAdapter<DummyTest, ItemCustomerListBinding>(
+class CustomerListRVAdapter(private val clickListener: RVClickListener): BaseAdapter<DummyTest, ItemCustomerListBinding>(
     diffCallback = BaseDiffCallback(
         itemTheSame = { oldItem, newItem -> oldItem == newItem },
         contentsTheSame =  { oldItem, newItem -> oldItem == newItem }
