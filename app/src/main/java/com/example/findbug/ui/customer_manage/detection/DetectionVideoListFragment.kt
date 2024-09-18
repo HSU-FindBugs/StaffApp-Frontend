@@ -17,7 +17,7 @@ class DetectionVideoListFragment : BaseFragment<FragmentDetectionVideoListBindin
     }
 
     private fun initSettings() {
-        Log.d("로그","로그")
+        setToolbarNavigation(binding.fragmentDetectionVideoListToolbar.toolbarPreviousIb)
     }
 
     private fun initAdapter() {

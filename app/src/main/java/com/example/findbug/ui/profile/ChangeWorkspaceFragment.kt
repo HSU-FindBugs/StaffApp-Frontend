@@ -16,7 +16,7 @@ class ChangeWorkspaceFragment : BaseFragment<FragmentChangeWorkspaceBinding>(R.l
     }
 
     private fun initSettings() {
-
+        setToolbarNavigation(binding.fragmentChangeWorkspaceToolbar.toolbarPreviousIb)
     }
 
     private fun initEditText() {

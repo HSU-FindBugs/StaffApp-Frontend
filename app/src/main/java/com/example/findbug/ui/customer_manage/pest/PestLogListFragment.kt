@@ -8,11 +8,11 @@ import com.example.findbug.databinding.FragmentPestLogBinding
 class PestLogListFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log_list) {
 
     override fun setLayout() {
-        Log.d("로그","로그")
+        initSettings()
     }
 
     private fun initSettings() {
-
+        setToolbarNavigation(binding.fragmentPestLogToolbar.toolbarPreviousIb)
     }
 
 }

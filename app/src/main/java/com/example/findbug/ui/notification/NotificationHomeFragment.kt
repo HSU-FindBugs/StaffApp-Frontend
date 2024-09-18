@@ -6,18 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.findbug.R
+import com.example.findbug.base.BaseFragment
+import com.example.findbug.databinding.FragmentNotificationHomeBinding
 
-class NotificationHomeFragment : Fragment() {
+class NotificationHomeFragment : BaseFragment<FragmentNotificationHomeBinding>(R.layout.fragment_notification_home) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setLayout() {
+        initSettings()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_notification_home, container, false)
+    private fun initSettings() {
+        setToolbarNavigation(binding.fragmentCustomerAddCameraToolbar.toolbarPreviousIb)
+    }
+
+    private fun initAdapter() {
+
     }
 
 }

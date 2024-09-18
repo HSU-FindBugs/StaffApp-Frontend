@@ -19,11 +19,12 @@ class CustomerAddCameraFragment : BaseFragment<FragmentCustomerAddCameraBinding>
     }
 
     override fun setLayout() {
+        initSettings()
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
     }
 
     private fun initSettings() {
-        Log.d("로그", "로그")
+        setToolbarNavigation(binding.fragmentCustomerAddCameraToolbar.toolbarPreviousIb)
     }
 
     private fun initEditText() {
