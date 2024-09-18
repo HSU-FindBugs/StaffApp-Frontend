@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -34,5 +35,12 @@ abstract class BaseFragment<VB: ViewBinding>(@LayoutRes private val layoutRes: I
     }
 
     abstract fun setLayout()
+
+    // 툴바 버튼 리스너 설정 함수 (뒤로가기)
+    protected fun setToolbarNavigation(button: ImageButton) {
+        button.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+    }
 
 }
