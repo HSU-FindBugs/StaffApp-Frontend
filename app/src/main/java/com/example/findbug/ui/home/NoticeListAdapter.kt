@@ -3,7 +3,6 @@ package com.example.findbug.ui.home
 import com.example.findbug.R
 import com.example.findbug.base.BaseAdapter
 import com.example.findbug.base.BaseDiffCallback
-import com.example.findbug.databinding.ItemCustomerListBinding
 import com.example.findbug.databinding.ItemNoticesBinding
 import com.example.findbug.utils.listener.RVClickListener
 
@@ -15,7 +14,7 @@ class NoticeListAdapter(private val clickListener: RVClickListener) : BaseAdapte
     )
 ) {
     override val layoutId: Int
-        get() = R.layout.item_notices
+        get() = R.layout.item_notice_list
 
     override fun bind(binding: ItemNoticesBinding, item: DummyTest) {
         binding.clickListener = clickListener
