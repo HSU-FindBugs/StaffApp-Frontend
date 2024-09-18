@@ -66,7 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_name_tv" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/fragment_commute_btn"
+                android:id="@+id/fragment_home_commute_btn"
                 style="@style/body1_medium_14"
                 android:layout_width="0dp"
                 android:layout_height="37dp"
