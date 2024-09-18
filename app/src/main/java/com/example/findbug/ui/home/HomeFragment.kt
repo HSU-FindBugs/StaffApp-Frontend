@@ -22,11 +22,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override fun setLayout() {
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
+        initSettings()
+    }
+
+    private fun initSettings() {
         initButton()
     }
 
     private fun initButton() {
 
+        var commute = true
+        val commuteBtn = binding.fragmentHomeCommuteBtn
+        commuteBtn.setOnClickListener {
+            if(commute){
+                commuteBtn.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.shape_rounded_rect_50dp))
+                commuteBtn.setBackgroundTintList(ContextCompat.getColorStateList(requireContext(), R.color.Blue500))
+                commuteBtn.text = "퇴근하기"
+                commute = false
+            } else {
+                commuteBtn.background = ContextCompat.getDrawable(requireContext(), R.drawable.shape_rounded_rect_50dp)
+                commuteBtn.setBackgroundTintList(ContextCompat.getColorStateList(requireContext(), R.color.Blue700))
+                commuteBtn.text = "출근하기"
+                commute = true
+            }
+        }
     }
 
 }

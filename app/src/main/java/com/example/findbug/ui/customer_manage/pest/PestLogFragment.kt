@@ -24,6 +24,7 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
     }
 
     private fun initSettings() {
+        setToolbarNavigation(binding.fragmentPestLogToolbar.toolbarPreviousIb)
         initButton()
     }
 

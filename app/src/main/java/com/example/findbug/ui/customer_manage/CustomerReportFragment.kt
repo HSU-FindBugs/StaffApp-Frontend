@@ -20,6 +20,7 @@ class CustomerReportFragment : BaseFragment<FragmentCustomerReportBinding>(R.lay
 
     override fun setLayout() {
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
+        setToolbarNavigation(binding.fragmentCustomerReportToolbar.toolbarPreviousIb)
         initSettings()
     }
 

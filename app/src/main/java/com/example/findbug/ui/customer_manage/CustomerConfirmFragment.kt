@@ -16,6 +16,7 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
         >(R.layout.fragment_customer_confirm) {
 
     override fun setLayout() {
+        setToolbarNavigation(binding.fragmentCustomerConfirmToolbar.toolbarPreviousIb)
         initButton()
     }
 

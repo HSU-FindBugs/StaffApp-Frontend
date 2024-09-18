@@ -1,6 +1,6 @@
 package com.example.findbug.ui.home
 
-data class CustomerList (
+data class DummyTest (
     val img: Int,
     val name: String,
     val date: String,
