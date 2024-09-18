@@ -6,7 +6,7 @@ import com.example.findbug.base.BaseDiffCallback
 import com.example.findbug.databinding.ItemNoticeListBinding
 import com.example.findbug.utils.listener.RVClickListener
 
-// 홈 - 공지사항 리사이클러뷰 어탭터
+// 홈 - 공지사항 리사이클러뷰 어댑터
 class NoticeListRVAdapter(private val clickListener: RVClickListener) : BaseAdapter<DummyTest, ItemNoticeListBinding>(
     BaseDiffCallback (
         itemTheSame = { oldItem, newItem -> oldItem == newItem },
