@@ -30,7 +30,7 @@ class ProfileHomeFragment : BaseFragment<FragmentProfileHomeBinding>(R.layout.fr
                 findNavController().navigateSafe(action.actionId)
             }
 
-            fragmentProfileHomeChangeLogoutIb.setOnClickListener {
+            fragmentProfileHomeChangeWorkplaceIb.setOnClickListener {
                 findNavController().navigateSafe(action.actionId)
             }
 

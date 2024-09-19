@@ -175,6 +175,7 @@
                 android:textColor="@color/Blue500"
                 android:background="@drawable/shape_rounded_rect_50dp"
                 android:backgroundTint="@color/Blue300"
+                android:enabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

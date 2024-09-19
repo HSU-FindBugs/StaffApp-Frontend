@@ -9,6 +9,18 @@
     <!-- 공지사항 더미 데이터 -->
    <string name="notice">9.04 00:00~05:00까지\n업데이트가 진행되어 어플 사용이\n불가하니 양해 부탁드립니다.</string>
 
+    <!-- 벌레 방제 솔루션 제목 -->
+    <string name="solution1_title">1단계: 카메라 위치와 동선 파악</string>
+    <string name="solution2_title">2단계: 트랩 설치</string>
+    <string name="solution3_title">3단계: 약제 사용</string>
+    <string name="solution4_title">4단계: 고객 상담</string>
+
+    <!-- 벌레 방제 솔루션 내용 -->
+    <string name="solution1_desc">카메라 위치를 통해 벌레의 이동 동선을 파악한다.</string>
+    <string name="solution2_desc">벌레의 수가 적거나 은신처가 별로 없을 때 사용한다.\n유인용 먹이를 넣은 끈끈이 트랩은 은폐된 장소에 배치한다.</string>
+    <string name="solution3_desc">트랩설치 뿐만 아니라 전용 약제를 사용해야한다.\n벌레가 자주 발생되는 하수구, 배수관, 싱크대에 약제를\n뿌려 벌레를 제거 및 방지한다.</string>
+    <string name="solution4_desc">벌레가 자주 발생할 수 있는 곳과 예방 방법에 대해 안내한다.\n벌레의 서식지와 트랩이 설치된 장소에 대해 설명한다.\n우리가 제공한 서비스에 대해 자세히 안내한다.</string>
+
     <!-- 다이얼로그 로그아웃 -->
     <string name="dialog_logout_title">정말 로그아웃 하시겠어요?</string>
     <string name="dialog_logout_content">로그아웃 하시면,\n다시 로그인하셔야 합니다.</string>

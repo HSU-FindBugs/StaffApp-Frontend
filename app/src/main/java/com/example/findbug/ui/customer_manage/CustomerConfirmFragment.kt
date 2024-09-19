@@ -50,7 +50,8 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
 
             // 실시간 영상 보기 화면으로 이동하는 버튼
             fragmentCustomerConfirmLiveIb.setOnClickListener {
-
+                val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToLiveStreamFragment()
+                findNavController().navigateSafe(action.actionId)
             }
 
             // 카메라 추가 화면으로 이동하는 버튼
