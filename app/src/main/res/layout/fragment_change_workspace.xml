@@ -84,6 +84,7 @@
             android:layout_marginStart="@dimen/start_margin"
             android:layout_marginEnd="@dimen/end_margin"
             android:text="@string/btn_save"
+            android:clickable="false"
             android:textColor="@color/Blue500"
             android:backgroundTint="@color/Blue300"
             app:layout_constraintBottom_toBottomOf="parent"
