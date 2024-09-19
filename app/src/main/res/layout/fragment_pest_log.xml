@@ -412,13 +412,15 @@
                         style="@style/body2_regular_14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="16dp"
                         android:layout_marginStart="@dimen/start_margin"
                         android:layout_marginEnd="@dimen/end_margin"
                         android:text="1단계: 카메라 위치와 동선 파악"
-                        app:layout_constraintTop_toBottomOf="@+id/fragment_pest_log_pest_solution_title_tv"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_pest_log_pest_solution_title_tv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
