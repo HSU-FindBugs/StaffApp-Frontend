@@ -37,8 +37,8 @@ class CustomerAddCameraFragment : BaseFragment<FragmentCustomerAddCameraBinding>
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
-                val cameraNameEt = binding.fragmentCustomerAddCameraNameEt.toString()
-                val cameraNumberEt = binding.fragmentCustomerAddCameraNumberEt.toString()
+                val cameraNameEt = binding.fragmentCustomerAddCameraNameEt.text.toString()
+                val cameraNumberEt = binding.fragmentCustomerAddCameraNumberEt.text.toString()
 
                 if (cameraNameEt.isNotEmpty() && cameraNumberEt.isNotEmpty()) {
                     saveBtn.setBackgroundResource(buttonBackground)
