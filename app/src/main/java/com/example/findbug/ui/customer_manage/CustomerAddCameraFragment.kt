@@ -13,14 +13,8 @@ import com.example.findbug.databinding.FragmentCustomerAddCameraBinding
 
 class CustomerAddCameraFragment : BaseFragment<FragmentCustomerAddCameraBinding>(R.layout.fragment_customer_add_camera) {
 
-    override fun onPause() {
-        super.onPause()
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.BG_Blue200)
-    }
-
     override fun setLayout() {
         initSettings()
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
     }
 
     private fun initSettings() {

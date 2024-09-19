@@ -15,13 +15,7 @@ import com.example.findbug.utils.extension.navigateSafe
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
-    override fun onPause() {
-        super.onPause()
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.BG_Blue200)
-    }
-
     override fun setLayout() {
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
         initSettings()
     }
 

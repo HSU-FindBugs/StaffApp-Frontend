@@ -13,13 +13,7 @@ import com.example.findbug.databinding.FragmentPestLogBinding
 
 class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log) {
 
-    override fun onPause() {
-        super.onPause()
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.BG_Blue200)
-    }
-
     override fun setLayout() {
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.Blue300)
         initSettings()
     }
 

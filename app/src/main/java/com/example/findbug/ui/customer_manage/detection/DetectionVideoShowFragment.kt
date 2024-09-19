@@ -13,14 +13,8 @@ import com.example.findbug.databinding.FragmentDetectionVideoShowBinding
 
 class DetectionVideoShowFragment : BaseFragment<FragmentDetectionVideoShowBinding>(R.layout.fragment_detection_video_show) {
 
-    override fun onPause() {
-        super.onPause()
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.BG_Blue200)
-    }
-
-
     override fun setLayout() {
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
+        initSettings()
     }
 
     private fun initSettings() {
