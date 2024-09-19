@@ -79,9 +79,9 @@
     <!-- 고객관리 - 고객 특이사항 작성 -->
     <fragment
         android:id="@+id/customerReportFragment"
-        android:name="com.example.findbug.ui.customer_manage.CustomerReportFragment"
+        android:name="com.example.findbug.ui.customer_manage.CustomerReportEditFragment"
         android:label="CustomerReportFragment"
-        tools:layout="@layout/fragment_customer_report"/>
+        tools:layout="@layout/fragment_customer_report_edit"/>
 
     <!-- 고객관리 - 해충 기록 리스트 -->
     <fragment
@@ -131,7 +131,11 @@
         android:id="@+id/customerInfoEditFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerInfoEditFragment"
         android:label="CustomerInfoEditFragment"
-        tools:layout="@layout/fragment_customer_info_edit"/>
+        tools:layout="@layout/fragment_customer_info_edit">
+        <action
+            android:id="@+id/action_customerInfoEditFragment_to_customerConfirmFragment"
+            app:destination="@id/customerConfirmFragment" />
+    </fragment>
 
     <!-- 고객관리 - 고객 검색 -->
     <fragment
