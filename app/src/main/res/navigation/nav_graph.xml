@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_customerInfoEditFragment"
             app:destination="@id/customerInfoEditFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_liveStreamFragment"
+            app:destination="@id/liveStreamFragment" />
     </fragment>
 
     <!-- 고객관리 - 고객 특이사항 작성 -->
@@ -136,5 +139,12 @@
         android:name="com.example.findbug.ui.customer_manage.CustomerSearchFragment"
         android:label="CustomerSearchFragment"
         tools:layout="@layout/fragment_customer_search"/>
+
+    <!-- 고객관리 - 실시간 영상 보기 -->
+    <fragment
+        android:id="@+id/liveStreamFragment"
+        android:name="com.example.findbug.ui.customer_manage.LiveStreamFragment"
+        android:label="LiveStreamFragment"
+        tools:layout="@layout/fragment_live_stream"/>
 
 </navigation>
