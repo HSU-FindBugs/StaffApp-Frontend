@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_customer_add_camera_name_et" />
 
         <EditText
-            android:id="@+id/fragment_customer_add_camera_phone_et"
+            android:id="@+id/fragment_customer_add_camera_number_et"
             style="@style/text_field_style"
             android:layout_width="0dp"
             android:layout_height="45dp"
@@ -84,6 +84,7 @@
             android:layout_marginEnd="@dimen/end_margin"
             android:text="@string/btn_save"
             android:textColor="@color/Blue500"
+            android:clickable="false"
             android:backgroundTint="@color/Blue300"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
