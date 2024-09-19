@@ -36,7 +36,7 @@ class ChangeWorkspaceFragment : BaseFragment<FragmentChangeWorkspaceBinding>(R.l
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
-                val changeWorkSpaceEdit = binding.fragmentChangeWorkspaceChangeRegionEt.toString()
+                val changeWorkSpaceEdit = binding.fragmentChangeWorkspaceChangeRegionEt.text.toString()
 
                 if (changeWorkSpaceEdit.isNotEmpty()) {
                     saveBtn.setBackgroundResource(buttonBackground)
