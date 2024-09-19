@@ -1,17 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.customer_manage.LiveStreamFragment">
+        android:layout_height="wrap_content">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.customer_manage.LiveStreamFragment">
 
+            <include
+                android:id="@+id/fragment_live_stream_toolbar"
+                layout="@layout/toolbar_base"
+                app:toolbarTitle="@{`실시간 영상보기`}"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/fragment_live_stream_name_tv"
+                    style="@style/body2_regular_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="16dp"
+                    android:text="박종범 고객님의 카메라"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/Black700"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_live_stream_name_tv">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/fragment_live_stream_guideline_35"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.30"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/fragment_live_stream_guideline_60"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_begin="464dp" />
+
+                        <TextView
+                            android:id="@+id/fragment_live_stream_time_tv"
+                            style="@style/body2_regular_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:text="12:52:03 PM"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toTopOf="@+id/fragment_live_stream_guideline_35"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/fragment_live_stream_preview_iv"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/fragment_live_stream_guideline_35"
+                            app:layout_constraintBottom_toBottomOf="@id/fragment_live_stream_guideline_60" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fragment_live_stream_ln"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="48dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toBottomOf="@+id/fragment_live_stream_preview_iv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <ImageButton
+                                android:id="@+id/fragment_live_stream_prev_ib"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_previous_blue500"
+                                android:background="@android:color/transparent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fragment_live_stream_page1_tv"
+                                style="@style/body1_medium_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:text="1"
+                                android:textColor="@color/Blue300"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_prev_ib"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fragment_live_stream_page_slash_tv"
+                                style="@style/body1_medium_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:text="/"
+                                android:textColor="@color/Blue300"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_page1_tv"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/fragment_live_stream_page3_tv"
+                                style="@style/body1_medium_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:text="4"
+                                android:textColor="@color/Blue300"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_page_slash_tv"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageButton
+                                android:id="@+id/fragment_live_stream_next_ib"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_next_blue500"
+                                android:background="@android:color/transparent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_page3_tv"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fragment_live_stream_add_camera_cl"
+                            style="@style/button1_style"
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="120dp"
+                            android:layout_marginBottom="40dp"
+                            android:layout_marginStart="@dimen/start_margin"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fragment_live_stream_ln" >
+
+                            <ImageView
+                                android:id="@+id/fragment_live_stream_add_camera_iv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/top_padding_mini"
+                                android:layout_marginBottom="@dimen/bottom_padding_mini"
+                                android:layout_marginStart="@dimen/start_padding"
+                                android:src="@drawable/ic_camera_white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fragment_live_stream_add_camera_tv"
+                                style="@style/body1_medium_14"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="@dimen/end_margin"
+                                android:text="카메라 추가"
+                                android:textColor="@color/white"
+                                app:layout_constraintBottom_toBottomOf="@+id/fragment_live_stream_add_camera_iv"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_add_camera_iv"
+                                app:layout_constraintTop_toTopOf="@+id/fragment_live_stream_add_camera_iv" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/fragment_live_stream_remove_camera_cl"
+                            style="@style/button1_style"
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="120dp"
+                            android:layout_marginBottom="40dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/fragment_live_stream_ln">
+
+                            <ImageView
+                                android:id="@+id/fragment_live_stream_remove_camera_iv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/start_padding"
+                                android:layout_marginTop="@dimen/top_padding_mini"
+                                android:layout_marginBottom="@dimen/bottom_padding_mini"
+                                android:src="@drawable/ic_trash_white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fragment_live_stream_remove_camera_tv"
+                                style="@style/body1_medium_14"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="@dimen/end_margin"
+                                android:text="카메라 삭제"
+                                android:textColor="@color/white"
+                                app:layout_constraintBottom_toBottomOf="@+id/fragment_live_stream_remove_camera_iv"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/fragment_live_stream_remove_camera_iv"
+                                app:layout_constraintTop_toTopOf="@+id/fragment_live_stream_remove_camera_iv" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
