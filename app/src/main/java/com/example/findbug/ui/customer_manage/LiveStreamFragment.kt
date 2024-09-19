@@ -7,7 +7,16 @@ import com.example.findbug.databinding.FragmentLiveStreamBinding
 class LiveStreamFragment : BaseFragment<FragmentLiveStreamBinding>(R.layout.fragment_live_stream) {
 
     override fun setLayout() {
-        TODO("Not yet implemented")
+        initSettings()
+    }
+
+    private fun initSettings() {
+        setToolbarNavigation(binding.fragmentLiveStreamToolbar.toolbarPreviousIb)
+        initButtons()
+    }
+
+    private fun initButtons() {
+
     }
 
 }
