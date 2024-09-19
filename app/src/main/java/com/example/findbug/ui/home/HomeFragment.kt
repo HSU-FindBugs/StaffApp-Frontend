@@ -35,7 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         val commuteBtn = binding.fragmentHomeCommuteBtn
         commuteBtn.setOnClickListener {
             if(commute){
-                commuteBtn.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.shape_rounded_rect_50dp))
+                commuteBtn.background = ContextCompat.getDrawable(requireContext(), R.drawable.shape_rounded_rect_50dp)
                 commuteBtn.setBackgroundTintList(ContextCompat.getColorStateList(requireContext(), R.color.Blue500))
                 commuteBtn.text = "퇴근하기"
                 commute = false
