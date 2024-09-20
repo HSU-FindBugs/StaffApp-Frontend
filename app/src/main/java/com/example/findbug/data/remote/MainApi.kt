@@ -14,7 +14,7 @@ interface MainApi {
 
     // 메인 페이지 조회
     @POST("/api/main/{id}")
-    suspend fun addCamera(
+    suspend fun getMainPage(
         @Path("id") id: Int
     ): BaseResponse<MainPageResponse>
 
