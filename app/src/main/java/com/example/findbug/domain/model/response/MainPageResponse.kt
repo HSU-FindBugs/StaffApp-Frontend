@@ -17,3 +17,8 @@ data class NotificationDto(
     val title: String? = "",
     val content: String? = "",
 )
+
+// sse-controller
+data class SseEmitter(
+    val timeout: String
+)
