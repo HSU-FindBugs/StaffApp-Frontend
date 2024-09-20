@@ -99,22 +99,22 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
         // 페이지별 이미지와 텍스트 변경
         when (page) {
             1 -> {
-                imageView.setImageResource(R.drawable.ic_navi_home_selected)
+                imageView.setImageResource(R.drawable.ic_solution1)
                 titleTextView.text = getString(R.string.solution1_title)
                 descTextView.text = getString(R.string.solution1_desc)
             }
             2 -> {
-                imageView.setImageResource(R.drawable.ic_trash_white)
+                imageView.setImageResource(R.drawable.ic_solution2)
                 titleTextView.text = getString(R.string.solution2_title)
                 descTextView.text = getString(R.string.solution2_desc)
             }
             3 -> {
-                imageView.setImageResource(R.drawable.ic_navi_notification_selected)
+                imageView.setImageResource(R.drawable.ic_solution3)
                 titleTextView.text = getString(R.string.solution3_title)
                 descTextView.text = getString(R.string.solution3_desc)
             }
             4 -> {
-                imageView.setImageResource(R.drawable.selector_navi_profile)
+                imageView.setImageResource(R.drawable.ic_solution4)
                 titleTextView.text = getString(R.string.solution4_title)
                 descTextView.text = getString(R.string.solution4_desc)
             }
