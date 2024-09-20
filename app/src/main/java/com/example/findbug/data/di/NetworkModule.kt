@@ -1,5 +1,6 @@
 package com.example.findbug.data.di
 
+import com.example.findbug.base.BaseUrl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +23,10 @@ object NetworkModule {
     @Retention(AnnotationRetention.BINARY)
     annotation class MainRetrofit
 
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class FastApiRetrofit
+
 //    @Singleton
 //    @Provides
 //    fun provideAccessTokenInterceptor(tokenManager: TokenManager): AccessTokenInterceptor {
@@ -31,6 +36,14 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideConverterFactory(): MoshiConverterFactory = MoshiConverterFactory.create()
+
+    @Singleton
+    @Provides
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+    }
 
     @Singleton
     @Provides
@@ -56,7 +69,21 @@ object NetworkModule {
         return Retrofit.Builder()
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)
-            .baseUrl("")
+            .baseUrl(BaseUrl.BASE_URL)
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    @Named("defaultFastApiClient")
+    fun provideFastApiClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(httpLoggingInterceptor)
             .build()
     }
 
