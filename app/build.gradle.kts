@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -6,6 +9,9 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
+
+    val properties = Properties()
+    properties.load(FileInputStream("local.properties"))
 
 android {
     namespace = "com.example.findbug"
@@ -19,6 +25,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "Spring_server", properties.getProperty("spring_server"))
     }
 
     buildTypes {
