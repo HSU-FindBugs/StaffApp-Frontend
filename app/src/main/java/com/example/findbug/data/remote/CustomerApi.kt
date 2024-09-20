@@ -2,11 +2,9 @@ package com.example.findbug.data.remote
 
 import com.example.findbug.base.BaseListResponse
 import com.example.findbug.base.BaseResponse
-import com.example.findbug.domain.model.request.CameraRegisterRequestDto
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
-import com.example.findbug.domain.model.response.CameraSaveResponse
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
 import com.example.findbug.domain.model.response.ManagementPageResponse
