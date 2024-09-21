@@ -4,6 +4,9 @@
 
     <data>
         <variable
+            name="notificationDto"
+            type="com.example.findbug.domain.model.response.NotificationDto" />
+        <variable
             name="clickListener"
             type="com.example.findbug.utils.listener.RVClickListener" />
     </data>
@@ -23,6 +26,7 @@
             android:layout_marginStart="6dp"
             android:background="@drawable/shape_rounded_rect_8dp"
             android:backgroundTint="@color/Blue500"
+            app:imageUrl="@{notificationDto.profileUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="12dp"
-            android:text="Cam1"
+            android:text="@{notificationDto.title}"
             app:layout_constraintStart_toEndOf="@+id/item_notice_iv"
             app:layout_constraintTop_toTopOf="@+id/item_notice_iv" />
 
@@ -60,7 +64,7 @@
             android:layout_marginEnd="9dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="트랩 설치, 다 죽여 스프레이 사용"
+            android:text="@{notificationDto.content}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/item_notice_title_tv"
