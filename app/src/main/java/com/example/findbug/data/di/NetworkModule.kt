@@ -33,9 +33,9 @@ object NetworkModule {
 //        return AccessTokenInterceptor(tokenManager)
 //    }
 
-    @Singleton
     @Provides
-    fun provideConverterFactory(): MoshiConverterFactory = MoshiConverterFactory.create()
+    @Singleton
+    fun provideConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
     @Singleton
     @Provides
@@ -64,10 +64,10 @@ object NetworkModule {
     @Provides
     fun provideMainRetrofit(
         @Named("defaultOkHttpClient") okHttpClient: OkHttpClient,
-        moshiConverterFactory: MoshiConverterFactory
+        gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(moshiConverterFactory)
+            .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)
             .baseUrl(BaseUrl.BASE_URL)
             .build()
