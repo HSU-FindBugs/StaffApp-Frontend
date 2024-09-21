@@ -62,6 +62,8 @@
                 android:hint="고객님의 전화번호를 입력하세요."
                 android:paddingStart="20dp"
                 android:textColorHint="@color/Blue500"
+                android:inputType="phone"
+                android:maxLength="13"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_customer_upsert_phone_tv" />
