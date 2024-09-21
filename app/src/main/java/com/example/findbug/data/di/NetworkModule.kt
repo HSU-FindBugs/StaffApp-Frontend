@@ -63,11 +63,11 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideMainRetrofit(
-        @Named("defaultMainApiClient") okHttpClient: OkHttpClient,
-        gsonConverterFactory: GsonConverterFactory
+        @Named("defaultOkHttpClient") okHttpClient: OkHttpClient,
+        moshiConverterFactory: MoshiConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .addConverterFactory(gsonConverterFactory)
+            .addConverterFactory(moshiConverterFactory)
             .client(okHttpClient)
             .baseUrl(BaseUrl.BASE_URL)
             .build()
