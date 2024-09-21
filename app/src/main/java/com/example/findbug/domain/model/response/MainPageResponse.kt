@@ -9,7 +9,7 @@ data class MainPageResponse(
     val bugName: String? = "",
     val bugDescription: String? = "",
     val bugStats: String? = "",
-    val notificationDtoList: List<NotificationDto>
+    val notificationDtoList: List<NotificationDto>? = null
 )
 
 data class NotificationDto(
@@ -20,5 +20,5 @@ data class NotificationDto(
 
 // sse-controller
 data class SseEmitter(
-    val timeout: String
+    val timeout: String? = ""
 )
