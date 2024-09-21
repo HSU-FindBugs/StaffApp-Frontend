@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.findbug.databinding.DialogStyleNoticeBinding
 import com.example.findbug.databinding.DialogStyleSearchBinding
 
-class NoticeDialog : DialogFragment() {
+class NoticeDialog(title: String, content: String) : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
@@ -22,6 +22,14 @@ class NoticeDialog : DialogFragment() {
     private var _binding: DialogStyleNoticeBinding? = null
     private val binding get() = _binding!!
 
+    private var title: String? = null
+    private var content: String? = null
+
+    init {
+        this.title = title
+        this.content = content
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +39,9 @@ class NoticeDialog : DialogFragment() {
         val view = binding.root
 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        binding.dialogStyleNoticeTitleTv.text = title
+        binding.dialogStyleNoticeContentTv.text = content
 
         // 확인 버튼 클릭
         binding.dialogStyleNoticeYesBtn.setOnClickListener {

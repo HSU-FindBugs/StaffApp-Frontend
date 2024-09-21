@@ -10,7 +10,6 @@ import androidx.fragment.app.DialogFragment
 import com.example.findbug.databinding.DialogStyleCancelBinding
 
 class ConfirmDialog(
-
     title: String, content: String
 ) : DialogFragment() {
 
