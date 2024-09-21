@@ -142,7 +142,11 @@
         android:id="@+id/customerSearchFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerSearchFragment"
         android:label="CustomerSearchFragment"
-        tools:layout="@layout/fragment_customer_search"/>
+        tools:layout="@layout/fragment_customer_search">
+        <action
+            android:id="@+id/action_customerSearchFragment_to_customerConfirmFragment"
+            app:destination="@id/customerConfirmFragment" />
+    </fragment>
 
     <!-- 고객관리 - 실시간 영상 보기 -->
     <fragment
