@@ -3,8 +3,6 @@ package com.example.findbug.ui.customer_manage
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.findbug.base.BaseListResponse
-import com.example.findbug.base.BaseResponse
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
@@ -18,6 +16,7 @@ import com.example.findbug.domain.repository.CustomerApiRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,32 +24,32 @@ class CustomerViewModel @Inject constructor(
     private val customerApiRepository: CustomerApiRepository
 ) : ViewModel() {
 
-    private val _customerInfo = MutableStateFlow<String>("")
+    private val _customerInfo = MutableStateFlow("")
     val customerInfo: MutableStateFlow<String> = _customerInfo
 
-    private val _customerSaveResponse = MutableStateFlow<BaseResponse<ManagementPageSaveResponse>>(BaseResponse())
-    val customerSaveResponse: MutableStateFlow<BaseResponse<ManagementPageSaveResponse>> = _customerSaveResponse
+    private val _customerSaveResponse = MutableStateFlow(Response.success(ManagementPageSaveResponse()))
+    val customerSaveResponse: MutableStateFlow<Response<ManagementPageSaveResponse>> = _customerSaveResponse
 
-    private val _customerListResponse = MutableStateFlow<BaseListResponse<ManagementPageResponse>>(BaseListResponse())
-    val customerListResponse: MutableStateFlow<BaseListResponse<ManagementPageResponse>> = _customerListResponse
+    private val _customerListResponse = MutableStateFlow(Response.success(ManagementPageResponse(null)))
+    val customerListResponse: MutableStateFlow<Response<ManagementPageResponse>> = _customerListResponse
 
-    private val _memberProfileResponse = MutableStateFlow<BaseResponse<ManagementPageMemberDto>>(BaseResponse())
-    val memberProfileResponse: MutableStateFlow<BaseResponse<ManagementPageMemberDto>> = _memberProfileResponse
+    private val _memberProfileResponse = MutableStateFlow(Response.success(ManagementPageMemberDto()))
+    val memberProfileResponse: MutableStateFlow<Response<ManagementPageMemberDto>> = _memberProfileResponse
 
-    private val _customerSearchResponse = MutableStateFlow<BaseListResponse<ManagementPageResponse>>(BaseListResponse())
-    val customerSearchResponse: MutableStateFlow<BaseListResponse<ManagementPageResponse>> = _customerSearchResponse
+    private val _customerSearchResponse = MutableStateFlow(Response.success(ManagementPageResponse(null)))
+    val customerSearchResponse: MutableStateFlow<Response<ManagementPageResponse>> = _customerSearchResponse
 
-    private val _recentCustomerSearchResponse = MutableStateFlow<BaseListResponse<ManagementPageRecentSearchResponse>>(BaseListResponse())
-    val recentCustomerSearchResponse: MutableStateFlow<BaseListResponse<ManagementPageRecentSearchResponse>> = _recentCustomerSearchResponse
+    private val _recentCustomerSearchResponse = MutableStateFlow(Response.success(ManagementPageRecentSearchResponse()))
+    val recentCustomerSearchResponse: MutableStateFlow<Response<ManagementPageRecentSearchResponse>> = _recentCustomerSearchResponse
 
-    private val _customerProfileResponse = MutableStateFlow<BaseResponse<ManagementProfileResponse>>(BaseResponse())
-    val customerProfileResponse: MutableStateFlow<BaseResponse<ManagementProfileResponse>> = _customerProfileResponse
+    private val _customerProfileResponse = MutableStateFlow(Response.success(ManagementProfileResponse()))
+    val customerProfileResponse: MutableStateFlow<Response<ManagementProfileResponse>> = _customerProfileResponse
 
-    private val _customerVisitResponse = MutableStateFlow<BaseResponse<ManagementProfileSaveResponse>>(BaseResponse())
-    val customerVisitResponse: MutableStateFlow<BaseResponse<ManagementProfileSaveResponse>> = _customerVisitResponse
+    private val _customerVisitResponse = MutableStateFlow(Response.success(ManagementProfileSaveResponse()))
+    val customerVisitResponse: MutableStateFlow<Response<ManagementProfileSaveResponse>> = _customerVisitResponse
 
-    private val _customerParticularResponse = MutableStateFlow<BaseResponse<ManagementProfileSaveResponse>>(BaseResponse())
-    val customerParticularResponse: MutableStateFlow<BaseResponse<ManagementProfileSaveResponse>> = _customerParticularResponse
+    private val _customerParticularResponse = MutableStateFlow(Response.success(ManagementProfileSaveResponse()))
+    val customerParticularResponse: MutableStateFlow<Response<ManagementProfileSaveResponse>> = _customerParticularResponse
 
     // 회원 정보 업데이트
     fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto) {
@@ -84,6 +83,7 @@ class CustomerViewModel @Inject constructor(
             try {
                 customerApiRepository.getCustomerList(staffId, page).collect { response ->
                     _customerListResponse.value = response
+                    Log.d("aaaa", "aaaa: ${response}")
                 }
             } catch (e: Exception) {
                 Log.e("CustomerViewModel getCustomerList Error", e.message.toString())

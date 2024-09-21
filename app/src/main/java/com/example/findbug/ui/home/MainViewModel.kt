@@ -3,13 +3,14 @@ package com.example.findbug.ui.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.findbug.base.BaseResponse
 import com.example.findbug.domain.model.response.MainPageResponse
+import com.example.findbug.domain.model.response.ManagementPageSaveResponse
 import com.example.findbug.domain.model.response.SseEmitter
 import com.example.findbug.domain.repository.MainApiRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,11 +18,11 @@ class MainViewModel @Inject constructor(
     private val mainApiRepository: MainApiRepository
 ): ViewModel() {
 
-    private val _mainPageResponse =  MutableStateFlow<BaseResponse<MainPageResponse>>(BaseResponse())
-    val mainPageResponse: MutableStateFlow<BaseResponse<MainPageResponse>> = _mainPageResponse
+    private val _mainPageResponse =  MutableStateFlow(Response.success(MainPageResponse()))
+    val mainPageResponse: MutableStateFlow<Response<MainPageResponse>> = _mainPageResponse
 
-    private val _sseEmitter =  MutableStateFlow<BaseResponse<SseEmitter>>(BaseResponse())
-    val sseEmitter: MutableStateFlow<BaseResponse<SseEmitter>> = _sseEmitter
+    private val _sseEmitter =  MutableStateFlow(Response.success(SseEmitter()))
+    val sseEmitter: MutableStateFlow<Response<SseEmitter>> = _sseEmitter
 
 
     fun getMainPage(id: Int) {

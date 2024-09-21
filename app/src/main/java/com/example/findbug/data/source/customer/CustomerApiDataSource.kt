@@ -1,8 +1,6 @@
 package com.example.findbug.data.source.customer
 
 import android.util.Log
-import com.example.findbug.base.BaseListResponse
-import com.example.findbug.base.BaseResponse
 import com.example.findbug.data.remote.CustomerApi
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
@@ -16,6 +14,7 @@ import com.example.findbug.domain.model.response.ManagementProfileSaveResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import retrofit2.Response
 import javax.inject.Inject
 
 class CustomerApiDataSource @Inject constructor(
@@ -29,7 +28,7 @@ class CustomerApiDataSource @Inject constructor(
         Log.e("CustomerApiDataSource 에러", e.message.toString())
     }
 
-    fun registerCustomer(memberRegisterRequestDto: MemberRegisterRequestDto): Flow<BaseResponse<ManagementPageSaveResponse>> =
+    fun registerCustomer(memberRegisterRequestDto: MemberRegisterRequestDto): Flow<Response<ManagementPageSaveResponse>> =
         flow {
             val result = customerApi.registerCustomer(memberRegisterRequestDto)
             emit(result)
@@ -38,7 +37,7 @@ class CustomerApiDataSource @Inject constructor(
         }
 
     // 고객 목록 조회
-    fun getCustomerList(staffId: Int, page: Int): Flow<BaseListResponse<ManagementPageResponse>> =
+    fun getCustomerList(staffId: Int, page: Int): Flow<Response<ManagementPageResponse>> =
         flow {
             val result = customerApi.getCustomerList(staffId, page)
             emit(result)
@@ -47,7 +46,7 @@ class CustomerApiDataSource @Inject constructor(
         }
 
     // 회원 프로필 정보 확인
-    fun getMemberProfile(memberId: Int): Flow<BaseResponse<ManagementPageMemberDto>> = flow {
+    fun getMemberProfile(memberId: Int): Flow<Response<ManagementPageMemberDto>> = flow {
         val result = customerApi.getMemberProfile(memberId)
         emit(result)
     }.catch { e ->
@@ -58,7 +57,7 @@ class CustomerApiDataSource @Inject constructor(
     fun customerInfoSearch(
         staffId: Int,
         memberName: String
-    ): Flow<BaseListResponse<ManagementPageResponse>> = flow {
+    ): Flow<Response<ManagementPageResponse>> = flow {
         val result = customerApi.customerInfoSearch(staffId, memberName)
         emit(result)
     }.catch { e ->
@@ -66,7 +65,7 @@ class CustomerApiDataSource @Inject constructor(
     }
 
     // 사용자 최신 검색 기록 조회
-    fun getRecentCustomerSearchList(staffId: Int): Flow<BaseListResponse<ManagementPageRecentSearchResponse>> =
+    fun getRecentCustomerSearchList(staffId: Int): Flow<Response<ManagementPageRecentSearchResponse>> =
         flow {
             val result = customerApi.getRecentCustomerSearchList(staffId)
             emit(result)
@@ -78,7 +77,7 @@ class CustomerApiDataSource @Inject constructor(
     fun getCustomerProfile(
         staffId: Int,
         memberId: Int
-    ): Flow<BaseResponse<ManagementProfileResponse>> = flow {
+    ): Flow<Response<ManagementProfileResponse>> = flow {
         val result = customerApi.getCustomerProfile(staffId, memberId)
         emit(result)
     }.catch { e ->
@@ -89,7 +88,7 @@ class CustomerApiDataSource @Inject constructor(
     fun registerCustomerVisit(
         staffId: Int,
         memberId: Int
-    ): Flow<BaseResponse<ManagementProfileSaveResponse>> = flow {
+    ): Flow<Response<ManagementProfileSaveResponse>> = flow {
         val result = customerApi.registerCustomerVisit(staffId, memberId)
         emit(result)
     }.catch { e ->
@@ -101,7 +100,7 @@ class CustomerApiDataSource @Inject constructor(
         staffId: Int,
         memberId: Int,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
-    ): Flow<BaseResponse<ManagementProfileSaveResponse>> = flow {
+    ): Flow<Response<ManagementProfileSaveResponse>> = flow {
         val result = customerApi.updateCustomerParticular(
             staffId,
             memberId,

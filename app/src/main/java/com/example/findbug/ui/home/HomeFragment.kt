@@ -27,7 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     private fun initSettings() {
         initButton()
         initAdapter()
-        observerViewModel()
+        //observerViewModel()
     }
 
     private fun initButton() {
@@ -60,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
                     mainViewModel.getMainPage(0)
                 }
                 mainViewModel.mainPageResponse.collect() { res ->
-                    res.result?.notificationDtoList?.let { notificationList ->
+                    res.body()?.notificationDtoList?.let { notificationList ->
                         noticeListRVAdapter.submitList(notificationList)
                     }
                 }

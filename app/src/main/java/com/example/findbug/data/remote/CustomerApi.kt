@@ -1,7 +1,5 @@
 package com.example.findbug.data.remote
 
-import com.example.findbug.base.BaseListResponse
-import com.example.findbug.base.BaseResponse
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
@@ -11,6 +9,7 @@ import com.example.findbug.domain.model.response.ManagementPageResponse
 import com.example.findbug.domain.model.response.ManagementPageSaveResponse
 import com.example.findbug.domain.model.response.ManagementProfileResponse
 import com.example.findbug.domain.model.response.ManagementProfileSaveResponse
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -31,33 +30,33 @@ interface CustomerApi {
     @POST("/management/register")
     suspend fun registerCustomer(
         @Body memberRegisterRequestDto: MemberRegisterRequestDto
-    ): BaseResponse<ManagementPageSaveResponse>
+    ): Response<ManagementPageSaveResponse>
 
     // 고객 목록 조회
     @GET("/management/{staff_id}/{page}")
     suspend fun getCustomerList(
         @Path("staff_id") staff_id: Int,
         @Path("page") page : Int
-    ): BaseListResponse<ManagementPageResponse>
+    ): Response<ManagementPageResponse>
 
     // 회원 프로필 정보 확인
     @GET("/management/{member_id}")
     suspend fun getMemberProfile(
         @Path("member_id") member_id: Int
-    ): BaseResponse<ManagementPageMemberDto>
+    ): Response<ManagementPageMemberDto>
 
     // 고객 정보 검색
     @GET("/management/search/{staff_id}/{member_name}")
     suspend fun customerInfoSearch(
         @Path("staff_id") staff_id: Int,
         @Path("member_name") member_name : String
-    ): BaseListResponse<ManagementPageResponse>
+    ): Response<ManagementPageResponse>
 
     // 사용자 최신 검색 기록 조회
     @GET("/management/recent/{staff_id}")
     suspend fun getRecentCustomerSearchList(
         @Path("staff_id") staff_id: Int
-    ): BaseListResponse<ManagementPageRecentSearchResponse>
+    ): Response<ManagementPageRecentSearchResponse>
 
     // 고객 관리 - 고객 정보 확인
 
@@ -66,14 +65,14 @@ interface CustomerApi {
     suspend fun getCustomerProfile(
         @Path("staff_id") staff_id: Int,
         @Path("member_id") member_id: Int
-    ): BaseResponse<ManagementProfileResponse>
+    ): Response<ManagementProfileResponse>
 
     // 고객 방문 등록
     @POST("/management/visit/{staff_id}/{member_id}")
     suspend fun registerCustomerVisit(
         @Path("staff_id") staff_id: Int,
         @Path("member_id") member_id: Int
-    ): BaseResponse<ManagementProfileSaveResponse>
+    ): Response<ManagementProfileSaveResponse>
 
     // 고객 특이사항 수정
     @POST("/management/visit/{staff_id}/{member_id}/memo")
@@ -81,6 +80,6 @@ interface CustomerApi {
         @Path("staff_id") staff_id: Int,
         @Path("member_id") member_id: Int,
         @Body managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
-    ): BaseResponse<ManagementProfileSaveResponse>
+    ): Response<ManagementProfileSaveResponse>
 
 }
