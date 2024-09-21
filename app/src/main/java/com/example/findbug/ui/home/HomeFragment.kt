@@ -11,8 +11,10 @@ import com.example.findbug.databinding.FragmentHomeBinding
 import com.example.findbug.domain.model.response.NotificationDto
 import com.example.findbug.utils.dialog.NoticeDialog
 import com.example.findbug.utils.listener.RVClickListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), RVClickListener {
 
     private lateinit var noticeListRVAdapter: NoticeListRVAdapter
