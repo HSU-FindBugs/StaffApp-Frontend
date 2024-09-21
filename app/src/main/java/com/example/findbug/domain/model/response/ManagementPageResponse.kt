@@ -9,7 +9,9 @@ data class ManagementPageRecentSearchResponse(
 
 // 고객 정보 조회 Response (고객 목록 조회, 고객 정보 검색)
 data class ManagementPageResponse(
-    val managementPageMemberDtoList: List<ManagementPageMemberDto>?
+    val managementPageMemberDtoList: List<ManagementPageMemberDto>?,
+    val isSearched: Boolean? = false,
+    val searched: Boolean? = false,
 )
 
 // 프로필 정보 반환 Response
