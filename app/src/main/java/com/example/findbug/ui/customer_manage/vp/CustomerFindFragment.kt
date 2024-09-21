@@ -57,8 +57,9 @@ class CustomerFindFragment : BaseFragment<FragmentCustomerFindBinding>(R.layout.
                     customerViewModel.getCustomerList(1, 0)
                 }
                 customerViewModel.customerListResponse.collect() { res ->
-                    Log.d("ㄹㄹㄹㄹㄹㄹ","res message: ${res.isSuccessful}")
-                    customerListAdapter.submitList(res.body()?.managementPageMemberDtoList)
+                    if (res.isSuccessful) {
+                        customerListAdapter.submitList(res.body()?.managementPageMemberDtoList)
+                    }
                 }
             }
         }
