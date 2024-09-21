@@ -1,11 +1,6 @@
 package com.example.findbug.ui.customer_manage
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
@@ -36,13 +31,13 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
                 findNavController().navigateSafe(action.actionId)
             }
 
-            // 해충 기록 화면으로 이동하는 버튼 (임시버튼)
+            // 해충 기록 목록 화면으로 이동하는 버튼
             fragmentCustomerConfirmBugSheetIb.setOnClickListener {
-                //val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogFragment()
-                //findNavController().navigateSafe(action.actionId)
+                val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogListFragment()
+                findNavController().navigateSafe(action.actionId)
             }
 
-            // 감지 영상 목록 화면으로 이동하는 버튼
+            // 감지 사진 목록 화면으로 이동하는 버튼
             fragmentCustomerConfirmVideoListIb.setOnClickListener {
                 val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToDetectionVideoListFragment()
                 findNavController().navigateSafe(action.actionId)
@@ -54,9 +49,15 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
                 findNavController().navigateSafe(action.actionId)
             }
 
-            // 카메라 추가 화면으로 이동하는 버튼
+            // 카메라 등록 화면으로 이동하는 버튼
             fragmentCustomerConfirmAddCameraIb.setOnClickListener {
                 val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerAddCameraFragment()
+                findNavController().navigateSafe(action.actionId)
+            }
+
+            // 회원 정보 수정 화면으로 이동하는 버튼
+            fragmentCustomerConfirmEditCustomerInfoIb.setOnClickListener {
+                val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerInfoEditFragment()
                 findNavController().navigateSafe(action.actionId)
             }
         }
