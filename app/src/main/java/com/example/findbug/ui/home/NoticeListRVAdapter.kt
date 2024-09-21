@@ -18,7 +18,9 @@ class NoticeListRVAdapter(private val clickListener: RVClickListener) : BaseAdap
         get() = R.layout.item_notice_list
 
     override fun bind(binding: ItemNoticeListBinding, item: NotificationDto) {
+        binding.notificationDto = item
         binding.clickListener = clickListener
+
         binding.root.setOnClickListener {
             clickListener.onItemClick(item)
         }
