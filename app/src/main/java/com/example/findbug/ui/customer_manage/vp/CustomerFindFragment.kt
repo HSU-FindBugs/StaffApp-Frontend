@@ -1,5 +1,6 @@
 package com.example.findbug.ui.customer_manage.vp
 
+import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentCustomerFindBinding
+import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.ui.customer_manage.CustomerViewModel
 import com.example.findbug.utils.extension.navigateSafe
 import com.example.findbug.utils.listener.RVClickListener
@@ -65,9 +67,15 @@ class CustomerFindFragment : BaseFragment<FragmentCustomerFindBinding>(R.layout.
         }
     }
 
-    // 고객 정보 확인 페이지로 이동
+    // 고객 정보 확인 페이지로 이동 (고객 아이디 전달)
     override fun onItemClick(item: Any) {
-        TODO("Not yet implemented")
+        if (item is ManagementPageMemberDto) {
+            val action = CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerConfirmFragment()
+            val args = Bundle().apply {
+                putInt("customerId", item.id ?: 1)
+            }
+            findNavController().navigateSafe(action.actionId, args)
+        }
     }
 
 }
