@@ -79,50 +79,57 @@ class CustomerAddCustomerFragment :
 
     private fun addCustomer() {
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    with(binding) {
-                        name = fragmentCustomerUpsertNameEt.text.toString()
-                        phoneNumber =
-                            formatPhoneNumber(fragmentCustomerUpsertPhoneEt.text.toString())
+            with(binding) {
+                name = fragmentCustomerUpsertNameEt.text.toString()
+                phoneNumber = formatPhoneNumber(fragmentCustomerUpsertPhoneEt.text.toString())
 
-                        val fullAddress = fragmentCustomerUpsertAddressEt.text.toString()
-                        val (addr1, addr2, addr3) = splitAddress(fullAddress)
-                        address1 = addr1
-                        address2 = addr2
-                        address3 = addr3
+                val fullAddress = fragmentCustomerUpsertAddressEt.text.toString()
+                val (addr1, addr2, addr3) = splitAddress(fullAddress)
+                address1 = addr1
+                address2 = addr2
+                address3 = addr3
 
-                        val detailAddress = fragmentCustomerUpsertDetailAddressEt.text.toString()
-                        detailAddress1 = detailAddress.substring(0, 5)
-                        detailAddress2 = if (detailAddress.length > 5) { detailAddress.substring(5) } else { "" }
-
-                        val selectedRadioButtonId = fragmentCustomerUpsertRadioGroup.checkedRadioButtonId
-                        if (selectedRadioButtonId != -1) {
-                            val selectedRadioButton = binding.root.findViewById<RadioButton>(selectedRadioButtonId)
-                            val selectedText = selectedRadioButton.text.toString()
-
-                            when (selectedText) {
-                                "1개월" -> membership = 1
-                                "3개월" -> membership = 3
-                                "6개월" -> membership = 6
-                                "1년" -> membership = 12
-                            }
-                        }
-                    }
-                    address = Address(address1, address2, address3, detailAddress1, detailAddress2)
-                    memberRegisterRequestDto = MemberRegisterRequestDto(1, name, "dssn1999@naver.com", phoneNumber, membership, address)
-
-                    // 고객 등록 요청 API 호출
-                    customerViewModel.registerCustomer(memberRegisterRequestDto)
+                val detailAddress = fragmentCustomerUpsertDetailAddressEt.text.toString()
+                detailAddress1 = detailAddress.substring(0, 5)
+                detailAddress2 = if (detailAddress.length > 5) {
+                    detailAddress.substring(5)
+                } else {
+                    ""
                 }
 
-                // 고객 등록 되면 화면 전환
-               customerViewModel.customerSaveResponse.collect() { res ->
-                   if (res.body()?.checked == true) {
-                       val action = CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerConfirmFragment()
-                       findNavController().navigateSafe(action.actionId)
-                   }
-               }
+                val selectedRadioButtonId = fragmentCustomerUpsertRadioGroup.checkedRadioButtonId
+                if (selectedRadioButtonId != -1) {
+                    val selectedRadioButton = binding.root.findViewById<RadioButton>(selectedRadioButtonId)
+                    val selectedText = selectedRadioButton.text.toString()
+
+                    when (selectedText) {
+                        "1개월" -> membership = 1
+                        "3개월" -> membership = 3
+                        "6개월" -> membership = 6
+                        "1년" -> membership = 12
+                    }
+                }
+            }
+            address = Address(address1, address2, address3, detailAddress1, detailAddress2)
+            memberRegisterRequestDto = MemberRegisterRequestDto(
+                1,
+                name,
+                "",
+                phoneNumber,
+                membership,
+                address
+            )
+
+            // 고객 등록 요청 API 호출
+            customerViewModel.registerCustomer(memberRegisterRequestDto)
+
+            // 고객 등록 되면 화면 전환
+            customerViewModel.customerSaveResponse.collect() { res ->
+                if (res.body()?.checked== true && res.isSuccessful) {
+                    val action =
+                        CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerConfirmFragment()
+                    findNavController().navigateSafe(action.actionId)
+                }
             }
         }
     }
