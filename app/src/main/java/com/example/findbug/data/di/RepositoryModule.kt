@@ -4,10 +4,13 @@ import com.example.findbug.data.source.camera.CameraApiDataSource
 import com.example.findbug.data.source.camera.CameraApiRepositoryImpl
 import com.example.findbug.data.source.customer.CustomerApiDataSource
 import com.example.findbug.data.source.customer.CustomerApiRepositoryImpl
+import com.example.findbug.data.source.fastapi.FastApiDataSource
+import com.example.findbug.data.source.fastapi.FastApiRepositoryImpl
 import com.example.findbug.data.source.main.MainApiDataSource
 import com.example.findbug.data.source.main.MainApiRepositoryImpl
 import com.example.findbug.domain.repository.CameraApiRepository
 import com.example.findbug.domain.repository.CustomerApiRepository
+import com.example.findbug.domain.repository.FastApiRepository
 import com.example.findbug.domain.repository.MainApiRepository
 import dagger.Module
 import dagger.Provides
@@ -19,10 +22,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RepositoryModule {
 
-//    @Singleton
-//    @Provides
-//    fun provideMainApiRepository(mainApiDataSource: MainApiDataSource) : MainApiRepository =
-//        MainRepositoryImpl(mainApiDataSource)
+    @Singleton
+    @Provides
+    fun provideFastApiRepository(fastApiDataSource: FastApiDataSource) : FastApiRepository =
+        FastApiRepositoryImpl(fastApiDataSource)
 
     @Singleton
     @Provides
@@ -38,6 +41,5 @@ object RepositoryModule {
     @Provides
     fun provideCustomerApiRepository(customerApiDataSource: CustomerApiDataSource) : CustomerApiRepository =
         CustomerApiRepositoryImpl(customerApiDataSource)
-
 
 }

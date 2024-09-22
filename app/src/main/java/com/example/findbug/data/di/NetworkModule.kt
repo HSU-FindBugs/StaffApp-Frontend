@@ -10,6 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Qualifier
@@ -37,6 +38,10 @@ object NetworkModule {
     @Singleton
     fun provideConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
+    @Provides
+    @Singleton
+    fun provideConverterScalarsFactory(): ScalarsConverterFactory = ScalarsConverterFactory.create()    // ScalarsConverterFactory
+
     @Singleton
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
@@ -49,6 +54,21 @@ object NetworkModule {
     @Provides
     @Named("defaultOkHttpClient")
     fun provideOkHttpClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
+    }
+
+    // Fast api
+    @Singleton
+    @Provides
+    @Named("defaultFastApiClient")
+    fun provideFastApiClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder()
@@ -73,17 +93,18 @@ object NetworkModule {
             .build()
     }
 
+    @FastApiRetrofit    // gsonConverterFactory: GsonConverterFactory
     @Singleton
     @Provides
-    @Named("defaultFastApiClient")
-    fun provideFastApiClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor,
-    ): OkHttpClient {
-        return OkHttpClient.Builder()
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .addInterceptor(httpLoggingInterceptor)
+    fun provideFastApiRetrofit(
+        @Named("defaultFastApiClient") okHttpClient: OkHttpClient,
+
+        scalarsConverterFactory: ScalarsConverterFactory
+    ): Retrofit {
+        return Retrofit.Builder()
+            .addConverterFactory(scalarsConverterFactory)
+            .client(okHttpClient)
+            .baseUrl("http://211.188.52.238:8000/")
             .build()
     }
 
