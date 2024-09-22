@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="profilePage"
+            type="com.example.findbug.domain.model.response.ManagementProfilePageMemberDto" />
+        <variable
+            name="profilePageVisit"
+            type="com.example.findbug.domain.model.response.ManagementProfilePageVisitDto" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -54,6 +59,7 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginStart="20dp"
+                    app:imageUrl="@{profilePage.profileUrl}"
                     android:background="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -65,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="전세원"
+                    android:text="@{profilePage.name}"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/fragment_customer_confirm_profile_iv"
                     app:layout_constraintStart_toEndOf="@+id/fragment_customer_confirm_profile_iv"
@@ -93,7 +99,7 @@
                     android:background="@drawable/shape_rounded_rect_80dp"
                     android:backgroundTint="@color/white"
                     android:gravity="center"
-                    android:text="D-34"
+                    android:text="@{`D-` + profilePage.remainingDays}"
                     android:textColor="@color/Blue700"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -131,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="경기도 하남시 00동"
+                    app:getAddress="@{profilePage.address}"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_phone_num_tv"
                     app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_phone_num_tv" />
@@ -191,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="감지사진"
+                android:text="감지 사진"
                 app:layout_constraintEnd_toEndOf="@+id/fragment_customer_confirm_video_list_ib"
                 app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_video_list_ib"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_bug_sheet_ib" />
@@ -300,7 +306,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
                     android:background="@drawable/shape_rounded_rect_8dp"
-                    android:backgroundTint="@color/Blue500"
+                    app:imageUrl="@{profilePageVisit.detectedImgUrl}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -312,7 +318,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="5dp"
-                    android:text="Cam1"
+                    android:text="@{profilePageVisit.visitedAt}"
                     app:layout_constraintStart_toEndOf="@+id/fragment_customer_confirm_preview_iv"
                     app:layout_constraintTop_toTopOf="@+id/fragment_customer_confirm_preview_iv" />
 
@@ -326,7 +332,7 @@
                     android:layout_marginBottom="8dp"
                     android:ellipsize="end"
                     android:maxLines="2"
-                    android:text="트랩 설치, 다 죽여 스프레이 사용"
+                    android:text="@{profilePageVisit.visitComment}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_title_tv"
@@ -368,7 +374,7 @@
                 android:paddingBottom="7dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="고객님이 바퀴벌레를 너무 무서워함.\n이미지 사용시 유의하기. 바퀴벌레 사진 보여주면 소리 지르심"
+                android:text="@{profilePage.memo}"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_customer_significant_tv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
