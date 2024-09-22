@@ -6,16 +6,19 @@ import androidx.lifecycle.viewModelScope
 import com.example.findbug.domain.model.response.MainPageResponse
 import com.example.findbug.domain.model.response.ManagementPageSaveResponse
 import com.example.findbug.domain.model.response.SseEmitter
+import com.example.findbug.domain.repository.FastApiRepository
 import com.example.findbug.domain.repository.MainApiRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
 import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val mainApiRepository: MainApiRepository
+    private val mainApiRepository: MainApiRepository,
+    private val fastApiRepository: FastApiRepository
 ): ViewModel() {
 
     private val _mainPageResponse =  MutableStateFlow(Response.success(MainPageResponse()))
@@ -23,6 +26,9 @@ class MainViewModel @Inject constructor(
 
     private val _sseEmitter =  MutableStateFlow(Response.success(SseEmitter()))
     val sseEmitter: MutableStateFlow<Response<SseEmitter>> = _sseEmitter
+
+//    private val _liveStreamResponse = MutableStateFlow<Response<ResponseBody>?>(null)
+//    val liveStreamResponse: MutableStateFlow<Response<ResponseBody>?> = _liveStreamResponse
 
 
     fun getMainPage(id: Int) {
@@ -48,5 +54,18 @@ class MainViewModel @Inject constructor(
             }
         }
     }
+
+//    fun getLiveStream(id: Int) {
+//        viewModelScope.launch {
+//            try {
+//                fastApiRepository.getLiveStream(id).collect { response ->
+//                    _liveStreamResponse.value = response
+//                    Log.d("ㄹㄹㄹㄹ", "ㄹㄹㄹㄹ: $_liveStreamResponse")
+//                }
+//            } catch (e: Exception) {
+//                Log.e("MainViewModel getLiveStream Error", e.message.toString())
+//            }
+//        }
+//    }
 
 }
