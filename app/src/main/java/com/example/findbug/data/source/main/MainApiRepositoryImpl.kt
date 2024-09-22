@@ -11,10 +11,10 @@ class MainApiRepositoryImpl @Inject constructor(
     private val dataSource: MainApiDataSource
 ): MainApiRepository {
 
-    override suspend fun getMainPage(id: Int): Flow<Response<MainPageResponse>>
+    override suspend fun getMainPage(id: Long): Flow<Response<MainPageResponse>>
     = dataSource.getMainPage(id)
 
-    override suspend fun notificationConnect(staffId: Int): Flow<Response<SseEmitter>>
+    override suspend fun notificationConnect(staffId: Long): Flow<Response<SseEmitter>>
     = dataSource.notificationConnect(staffId)
 
 }

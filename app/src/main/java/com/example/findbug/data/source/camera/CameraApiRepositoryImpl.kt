@@ -15,7 +15,7 @@ class CameraApiRepositoryImpl @Inject constructor(
     override suspend fun addCamera(cameraRegisterRequestDto: CameraRegisterRequestDto): Flow<Response<CameraSaveResponse>>
     = dataSource.addCamera(cameraRegisterRequestDto)
 
-    override suspend fun getCamera(member_id: Int): Flow<Response<CameraListResponse>>
+    override suspend fun getCamera(member_id: Long): Flow<Response<CameraListResponse>>
     = dataSource.getCamera(member_id)
 
 }

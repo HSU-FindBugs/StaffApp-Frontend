@@ -37,7 +37,7 @@ class CustomerApiDataSource @Inject constructor(
         }
 
     // 고객 목록 조회
-    fun getCustomerList(staffId: Int, page: Int): Flow<Response<ManagementPageResponse>> =
+    fun getCustomerList(staffId: Long, page: Int): Flow<Response<ManagementPageResponse>> =
         flow {
             val result = customerApi.getCustomerList(staffId, page)
             emit(result)
@@ -46,7 +46,7 @@ class CustomerApiDataSource @Inject constructor(
         }
 
     // 회원 프로필 정보 확인
-    fun getMemberProfile(memberId: Int): Flow<Response<ManagementPageMemberDto>> = flow {
+    fun getMemberProfile(memberId: Long): Flow<Response<ManagementPageMemberDto>> = flow {
         val result = customerApi.getMemberProfile(memberId)
         emit(result)
     }.catch { e ->
@@ -55,7 +55,7 @@ class CustomerApiDataSource @Inject constructor(
 
     // 고객 정보 검색
     fun customerInfoSearch(
-        staffId: Int,
+        staffId: Long,
         memberName: String
     ): Flow<Response<ManagementPageResponse>> = flow {
         val result = customerApi.customerInfoSearch(staffId, memberName)
@@ -65,7 +65,7 @@ class CustomerApiDataSource @Inject constructor(
     }
 
     // 사용자 최신 검색 기록 조회
-    fun getRecentCustomerSearchList(staffId: Int): Flow<Response<ManagementPageRecentSearchResponse>> =
+    fun getRecentCustomerSearchList(staffId: Long): Flow<Response<ManagementPageRecentSearchResponse>> =
         flow {
             val result = customerApi.getRecentCustomerSearchList(staffId)
             emit(result)
@@ -75,8 +75,8 @@ class CustomerApiDataSource @Inject constructor(
 
     // 고객 프로필 조회
     fun getCustomerProfile(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileResponse>> = flow {
         val result = customerApi.getCustomerProfile(staffId, memberId)
         emit(result)
@@ -86,8 +86,8 @@ class CustomerApiDataSource @Inject constructor(
 
     // 고객 방문 등록
     fun registerCustomerVisit(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileSaveResponse>> = flow {
         val result = customerApi.registerCustomerVisit(staffId, memberId)
         emit(result)
@@ -97,8 +97,8 @@ class CustomerApiDataSource @Inject constructor(
 
     // 고객 특이사항 수정
     fun updateCustomerParticular(
-        staffId: Int,
-        memberId: Int,
+        staffId: Long,
+        memberId: Long,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>> = flow {
         val result = customerApi.updateCustomerParticular(

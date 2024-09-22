@@ -22,7 +22,7 @@ class CameraApiDataSource @Inject constructor(
         Log.e("CameraApiDataSource 에러", e.message.toString())
     }
 
-    fun getCamera(member_id: Int): Flow<Response<CameraListResponse>> = flow {
+    fun getCamera(member_id: Long): Flow<Response<CameraListResponse>> = flow {
         val result = cameraApi.getCamera(member_id)
         emit(result)
     }.catch { e ->

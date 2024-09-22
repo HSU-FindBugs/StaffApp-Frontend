@@ -36,7 +36,7 @@ class CameraViewModel @Inject constructor(
         }
     }
 
-    fun getCamera(member_id: Int) {
+    fun getCamera(member_id: Long) {
         viewModelScope.launch {
             try {
                 cameraApiRepository.getCamera(member_id).collect() {

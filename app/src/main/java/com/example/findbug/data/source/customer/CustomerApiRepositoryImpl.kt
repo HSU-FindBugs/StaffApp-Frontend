@@ -25,34 +25,34 @@ class CustomerApiRepositoryImpl @Inject constructor(
     = dataSource.registerCustomer(memberRegisterRequestDto)
 
     override suspend fun getCustomerList(
-        staffId: Int,
+        staffId: Long,
         page: Int
     ): Flow<Response<ManagementPageResponse>> = dataSource.getCustomerList(staffId, page)
 
-    override suspend fun getMemberProfile(memberId: Int): Flow<Response<ManagementPageMemberDto>>
+    override suspend fun getMemberProfile(memberId: Long): Flow<Response<ManagementPageMemberDto>>
     = dataSource.getMemberProfile(memberId)
 
     override suspend fun customerInfoSearch(
-        staffId: Int,
+        staffId: Long,
         memberName: String
     ): Flow<Response<ManagementPageResponse>> = dataSource.customerInfoSearch(staffId, memberName)
 
-    override suspend fun getRecentCustomerSearchList(staffId: Int): Flow<Response<ManagementPageRecentSearchResponse>>
+    override suspend fun getRecentCustomerSearchList(staffId: Long): Flow<Response<ManagementPageRecentSearchResponse>>
     = dataSource.getRecentCustomerSearchList(staffId)
 
     override suspend fun getCustomerProfile(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileResponse>> = dataSource.getCustomerProfile(staffId, memberId)
 
     override suspend fun registerCustomerVisit(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileSaveResponse>> = dataSource.registerCustomerVisit(staffId, memberId)
 
     override suspend fun updateCustomerParticular(
-        staffId: Int,
-        memberId: Int,
+        staffId: Long,
+        memberId: Long,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>> = dataSource.updateCustomerParticular(staffId, memberId, managementProfileUpdateNoteRequestDto)
 

@@ -12,13 +12,13 @@ interface MainApi {
     // 메인 페이지 조회
     @GET("/api/main/{id}")
     suspend fun getMainPage(
-        @Path("id") id: Int
+        @Path("id") id: Long
     ): Response<MainPageResponse>
 
     // sse-controller
     @GET("/detection-events/connect/{staffId}")
     suspend fun notificationConnect(
-        @Path("staffId") staffId: Int
+        @Path("staffId") staffId: Long
     ): Response<SseEmitter>
 
 }

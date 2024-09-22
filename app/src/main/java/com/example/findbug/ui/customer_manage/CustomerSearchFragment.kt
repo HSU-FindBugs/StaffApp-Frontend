@@ -20,13 +20,15 @@ import com.example.findbug.utils.listener.RVClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class CustomerSearchFragment : BaseFragment<FragmentCustomerSearchBinding>(R.layout.fragment_customer_search), RVClickListener {
 
     private lateinit var recentCustomerRVAdapter: RecentCustomerRVAdapter
+    private var memberId by Delegates.notNull<Long>()
+
     private var isSuccess = false
-    private var memberId = 0
     private val customerViewModel : CustomerViewModel by activityViewModels()
 
     override fun setLayout() {
@@ -90,7 +92,7 @@ class CustomerSearchFragment : BaseFragment<FragmentCustomerSearchBinding>(R.lay
                 val responseBody = res.body()
                 memberId = responseBody?.managementPageMemberDtoList?.firstOrNull()?.id ?: 0
                 Log.d("고객 검색", "memberId : $memberId")
-                val args = Bundle().apply { putInt("memberId", memberId) }
+                val args = Bundle().apply { putLong("memberId", memberId) }
 
                 // res.body()가 null이 아닌지 체크하고, 검색된 결과가 있을 때만 화면 전환
                 if (res.isSuccessful && responseBody != null && responseBody.isSearched == true) {

@@ -26,42 +26,42 @@ interface CustomerApiRepository {
 
     // 고객 목록 조회
     suspend fun getCustomerList(
-        staffId: Int,
+        staffId: Long,
         page: Int
     ): Flow<Response<ManagementPageResponse>>
 
     // 회원 프로필 정보 확인
     suspend fun getMemberProfile(
-        memberId: Int
+        memberId: Long
     ): Flow<Response<ManagementPageMemberDto>>
 
     // 고객 정보 검색
     suspend fun customerInfoSearch(
-        staffId: Int,
+        staffId: Long,
         memberName: String
     ): Flow<Response<ManagementPageResponse>>
 
     // 사용자 최신 검색 기록 조회
     suspend fun getRecentCustomerSearchList(
-        staffId: Int
+        staffId: Long
     ): Flow<Response<ManagementPageRecentSearchResponse>>
 
     // 고객 프로필 조회
     suspend fun getCustomerProfile(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileResponse>>
 
     // 고객 방문 등록
     suspend fun registerCustomerVisit(
-        staffId: Int,
-        memberId: Int
+        staffId: Long,
+        memberId: Long
     ): Flow<Response<ManagementProfileSaveResponse>>
 
     // 고객 특이사항 수정
     suspend fun updateCustomerParticular(
-        staffId: Int,
-        memberId: Int,
+        staffId: Long,
+        memberId: Long,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>>
 }

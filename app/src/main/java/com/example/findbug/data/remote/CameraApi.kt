@@ -20,7 +20,7 @@ interface CameraApi {
     // 카메라 조회
     @GET("/camera/{member_id}")
     suspend fun getCamera(
-        @Path("member_id") member_id: Int
+        @Path("member_id") member_id: Long
     ) : Response<CameraListResponse>
 
 }

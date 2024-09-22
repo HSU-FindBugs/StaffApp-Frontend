@@ -31,7 +31,7 @@ class MainViewModel @Inject constructor(
 //    val liveStreamResponse: MutableStateFlow<Response<ResponseBody>?> = _liveStreamResponse
 
 
-    fun getMainPage(id: Int) {
+    fun getMainPage(id: Long) {
         viewModelScope.launch {
             try {
                 mainApiRepository.getMainPage(id).collect() {
@@ -43,7 +43,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun notificationConnect(staffId: Int) {
+    fun notificationConnect(staffId: Long) {
         viewModelScope.launch {
             try {
                 mainApiRepository.notificationConnect(staffId).collect() {

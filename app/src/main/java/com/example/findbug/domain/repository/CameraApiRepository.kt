@@ -8,5 +8,5 @@ import retrofit2.Response
 
 interface CameraApiRepository {
     suspend fun addCamera(cameraRegisterRequestDto: CameraRegisterRequestDto): Flow<Response<CameraSaveResponse>>
-    suspend fun getCamera(member_id: Int): Flow<Response<CameraListResponse>>
+    suspend fun getCamera(member_id: Long): Flow<Response<CameraListResponse>>
 }

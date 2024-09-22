@@ -14,14 +14,14 @@ class MainApiDataSource @Inject constructor(
     private val mainApi: MainApi
 ) {
 
-    fun getMainPage(id: Int): Flow<Response<MainPageResponse>> = flow {
+    fun getMainPage(id: Long): Flow<Response<MainPageResponse>> = flow {
         val result = mainApi.getMainPage(id)
         emit(result)
     }.catch { e ->
         Log.e("MainApiDataSource 에러", e.message.toString())
     }
 
-    fun notificationConnect(staffId: Int): Flow<Response<SseEmitter>> = flow {
+    fun notificationConnect(staffId: Long): Flow<Response<SseEmitter>> = flow {
         val result = mainApi.notificationConnect(staffId)
         emit(result)
     }.catch { e ->

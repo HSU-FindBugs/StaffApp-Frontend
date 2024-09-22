@@ -16,7 +16,7 @@ data class ManagementPageResponse(
 
 // 프로필 정보 반환 Response
 data class ManagementPageMemberDto(
-    val id: Int? =0,
+    val id: Long? =0,
     val name: String? ="",
     val address: Address? = null,
     val recentVisit: String? = "",
@@ -35,7 +35,7 @@ data class ManagementProfileResponse(
 )
 
 data class ManagementProfilePageMemberDto(
-    val id: Int? = 0,
+    val id: Long? = 0,
     val profileUrl: String? ="",
     val name: String? ="",
     val address: Address,
@@ -45,7 +45,8 @@ data class ManagementProfilePageMemberDto(
 )
 
 data class ManagementProfilePageVisitDto(
-    val visitId: Int? =0,
+    val visitId: Long? =0,
+    val title: String? = "",
     val visitedAt: String? ="",
     val visitComment: String? ="",
     val detectedImgUrl: String? = ""

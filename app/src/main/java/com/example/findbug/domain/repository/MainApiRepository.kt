@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 interface MainApiRepository {
-    suspend fun getMainPage(id: Int): Flow<Response<MainPageResponse>>
-    suspend fun notificationConnect(staffId: Int): Flow<Response<SseEmitter>>
+    suspend fun getMainPage(id: Long): Flow<Response<MainPageResponse>>
+    suspend fun notificationConnect(staffId: Long): Flow<Response<SseEmitter>>
 }

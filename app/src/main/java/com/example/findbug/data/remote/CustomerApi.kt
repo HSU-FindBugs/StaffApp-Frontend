@@ -35,27 +35,27 @@ interface CustomerApi {
     // 고객 목록 조회
     @GET("/management/{staff_id}/{page}")
     suspend fun getCustomerList(
-        @Path("staff_id") staff_id: Int,
+        @Path("staff_id") staff_id: Long,
         @Path("page") page : Int
     ): Response<ManagementPageResponse>
 
     // 회원 프로필 정보 확인
     @GET("/management/{member_id}")
     suspend fun getMemberProfile(
-        @Path("member_id") member_id: Int
+        @Path("member_id") member_id: Long
     ): Response<ManagementPageMemberDto>
 
     // 고객 정보 검색
     @GET("/management/search/{staff_id}/{member_name}")
     suspend fun customerInfoSearch(
-        @Path("staff_id") staff_id: Int,
+        @Path("staff_id") staff_id: Long,
         @Path("member_name") member_name : String
     ): Response<ManagementPageResponse>
 
     // 사용자 최신 검색 기록 조회
     @GET("/management/recent/{staff_id}")
     suspend fun getRecentCustomerSearchList(
-        @Path("staff_id") staff_id: Int
+        @Path("staff_id") staff_id: Long
     ): Response<ManagementPageRecentSearchResponse>
 
     // 고객 관리 - 고객 정보 확인
@@ -63,22 +63,22 @@ interface CustomerApi {
     // 고객 프로필 조회
     @GET("/management/visit/{staff_id}/{member_id}")
     suspend fun getCustomerProfile(
-        @Path("staff_id") staff_id: Int,
-        @Path("member_id") member_id: Int
+        @Path("staff_id") staff_id: Long,
+        @Path("member_id") member_id: Long
     ): Response<ManagementProfileResponse>
 
     // 고객 방문 등록
     @POST("/management/visit/{staff_id}/{member_id}")
     suspend fun registerCustomerVisit(
-        @Path("staff_id") staff_id: Int,
-        @Path("member_id") member_id: Int
+        @Path("staff_id") staff_id: Long,
+        @Path("member_id") member_id: Long
     ): Response<ManagementProfileSaveResponse>
 
     // 고객 특이사항 수정
     @POST("/management/visit/{staff_id}/{member_id}/memo")
     suspend fun updateCustomerParticular (
-        @Path("staff_id") staff_id: Int,
-        @Path("member_id") member_id: Int,
+        @Path("staff_id") staff_id: Long,
+        @Path("member_id") member_id: Long,
         @Body managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Response<ManagementProfileSaveResponse>
 

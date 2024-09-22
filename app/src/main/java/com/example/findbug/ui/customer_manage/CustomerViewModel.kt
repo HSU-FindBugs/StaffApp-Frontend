@@ -78,7 +78,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 고객 목록 조회
-    fun getCustomerList(staffId: Int, page: Int) {
+    fun getCustomerList(staffId: Long, page: Int) {
         viewModelScope.launch {
             try {
                 customerApiRepository.getCustomerList(staffId, page).collect { response ->
@@ -92,7 +92,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 회원 프로필 정보 확인
-    fun getMemberProfile(memberId: Int) {
+    fun getMemberProfile(memberId: Long) {
         viewModelScope.launch {
             try {
                 customerApiRepository.getMemberProfile(memberId).collect { response ->
@@ -105,7 +105,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 고객 정보 검색
-    fun customerInfoSearch(staffId: Int, memberName: String) {
+    fun customerInfoSearch(staffId: Long, memberName: String) {
         viewModelScope.launch {
             try {
                 customerApiRepository.customerInfoSearch(staffId, memberName).collect { response ->
@@ -118,7 +118,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 사용자 최신 검색 기록 조회
-    fun getRecentCustomerSearchList(staffId: Int) {
+    fun getRecentCustomerSearchList(staffId: Long) {
         viewModelScope.launch {
             try {
                 customerApiRepository.getRecentCustomerSearchList(staffId).collect { response ->
@@ -131,7 +131,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 고객 프로필 조회
-    fun getCustomerProfile(staffId: Int, memberId: Int) {
+    fun getCustomerProfile(staffId: Long, memberId: Long) {
         viewModelScope.launch {
             try {
                 customerApiRepository.getCustomerProfile(staffId, memberId).collect { response ->
@@ -144,7 +144,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 고객 방문 등록
-    fun registerCustomerVisit(staffId: Int, memberId: Int) {
+    fun registerCustomerVisit(staffId: Long, memberId: Long) {
         viewModelScope.launch {
             try {
                 customerApiRepository.registerCustomerVisit(staffId, memberId).collect { response ->
@@ -157,7 +157,7 @@ class CustomerViewModel @Inject constructor(
     }
 
     // 고객 특이사항 수정
-    fun updateCustomerParticular(staffId: Int, memberId: Int, managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto) {
+    fun updateCustomerParticular(staffId: Long, memberId: Long, managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto) {
         viewModelScope.launch {
             try {
                 customerApiRepository.updateCustomerParticular(staffId, memberId, managementProfileUpdateNoteRequestDto).collect { response ->
