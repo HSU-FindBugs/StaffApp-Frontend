@@ -74,6 +74,9 @@
         <action
             android:id="@+id/action_customerConfirmFragment_to_liveStreamFragment"
             app:destination="@id/liveStreamFragment" />
+        <action
+            android:id="@+id/action_customerConfirmFragment_to_customerHomeFragment"
+            app:destination="@id/customerHomeFragment" />
     </fragment>
 
     <!-- 고객관리 - 고객 특이사항 작성 -->
