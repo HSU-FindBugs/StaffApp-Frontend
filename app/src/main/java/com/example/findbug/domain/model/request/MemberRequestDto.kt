@@ -2,8 +2,8 @@ package com.example.findbug.domain.model.request
 
 // 회원 정보 업데이트 Request
 data class MemberUpdateRequestDto(
-    val staffId: Int? = 0,
-    val memberId: Int? = 0,
+    val staffId: Long? = 0,
+    val memberId: Long? = 0,
     val name: String? = "",
     val email: String? = "",
     val phoneNumber: String? = "",

@@ -6,6 +6,9 @@
         <variable
             name="clickListener"
             type="com.example.findbug.utils.listener.RVClickListener" />
+        <variable
+            name="detectionHistory"
+            type="com.example.findbug.domain.model.response.DetectionHistory" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +25,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginStart="6dp"
             android:background="@drawable/shape_rounded_rect_8dp"
-            android:backgroundTint="@color/white"
+            app:imageUrl="@{detectionHistory.detectionImgUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="12dp"
-            android:text="Cam1"
+            android:text="@{detectionHistory.camera}"
             app:layout_constraintStart_toEndOf="@+id/item_pest_list_iv"
             app:layout_constraintTop_toTopOf="@+id/item_pest_list_iv" />
 
@@ -48,7 +51,7 @@
             android:layout_marginEnd="9dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Kirby"
+            android:text="@{detectionHistory.name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/item_pest_list_title_tv"
             app:layout_constraintTop_toBottomOf="@+id/item_pest_list_title_tv" />
@@ -61,7 +64,7 @@
             android:layout_marginTop="55dp"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="12sp"
-            android:text="2024.05.05 18:40"
+            android:text="@{detectionHistory.date}"
             android:textColor="@color/Blue500"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

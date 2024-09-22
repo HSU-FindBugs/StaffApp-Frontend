@@ -26,6 +26,7 @@
             android:layout_marginStart="@dimen/start_margin"
             android:layout_marginEnd="@dimen/end_margin"
             tools:listitem="@layout/item_pest_list"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

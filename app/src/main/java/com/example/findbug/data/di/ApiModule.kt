@@ -2,6 +2,7 @@ package com.example.findbug.data.di
 
 import com.example.findbug.data.remote.CameraApi
 import com.example.findbug.data.remote.CustomerApi
+import com.example.findbug.data.remote.FastApi
 import com.example.findbug.data.remote.MainApi
 import dagger.Module
 import dagger.Provides
@@ -37,5 +38,11 @@ object ApiModule {
     fun provideCustomerApi(
         @NetworkModule.MainRetrofit retrofit: Retrofit
     ): CustomerApi = retrofit.create(CustomerApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideFastApi(
+        @NetworkModule.FastApiRetrofit retrofit: Retrofit
+    ): FastApi = retrofit.create(FastApi::class.java)
 
 }

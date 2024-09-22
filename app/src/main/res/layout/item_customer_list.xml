@@ -4,6 +4,9 @@
 
     <data>
         <variable
+            name="pageMember"
+            type="com.example.findbug.domain.model.response.ManagementPageMemberDto" />
+        <variable
             name="clickListener"
             type="com.example.findbug.utils.listener.RVClickListener" />
     </data>
@@ -33,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="박종범"
+            android:text="@{pageMember.name}"
             app:layout_constraintStart_toEndOf="@+id/item_customer_list_iv"
             app:layout_constraintTop_toTopOf="@+id/item_customer_list_iv" />
 
@@ -58,8 +61,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="9dp"
             android:ellipsize="end"
-            android:maxLines="2"
-            android:text="경기도 하남시 00동 00아파트 00동 00호"
+            android:maxLines="1"
+            app:getAddress="@{pageMember.address}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/item_customer_list_title_tv"

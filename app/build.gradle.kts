@@ -82,6 +82,7 @@ dependencies {
 
     // Retrofit
     implementation(libs.retrofit)
+    implementation ("com.squareup.retrofit2:converter-scalars:2.6.4")
 
     // gson
     implementation(libs.gson)

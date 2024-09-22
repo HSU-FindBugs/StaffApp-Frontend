@@ -17,7 +17,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.findbug.base.BaseActivity
 import com.example.findbug.databinding.ActivityMainBinding
 import com.example.findbug.utils.extension.navigateToTopLevelDestination
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private lateinit var navController: NavController
