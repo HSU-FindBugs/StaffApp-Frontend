@@ -3,6 +3,7 @@ package com.example.findbug.data.source.customer
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
+import com.example.findbug.domain.model.response.DetectionHistoryResponse
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
 import com.example.findbug.domain.model.response.ManagementPageResponse
@@ -55,5 +56,10 @@ class CustomerApiRepositoryImpl @Inject constructor(
         memberId: Long,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>> = dataSource.updateCustomerParticular(staffId, memberId, managementProfileUpdateNoteRequestDto)
+
+    override suspend fun getPestLogList(
+        staffId: Long,
+        memberId: Long
+    ): Flow<Response<DetectionHistoryResponse>> = dataSource.getPestLogList(staffId, memberId)
 
 }

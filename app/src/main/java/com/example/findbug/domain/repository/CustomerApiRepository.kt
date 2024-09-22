@@ -3,6 +3,7 @@ package com.example.findbug.domain.repository
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
+import com.example.findbug.domain.model.response.DetectionHistoryResponse
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
 import com.example.findbug.domain.model.response.ManagementPageResponse
@@ -64,4 +65,10 @@ interface CustomerApiRepository {
         memberId: Long,
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>>
+
+    suspend fun getPestLogList(
+        staffId: Long,
+        memberId: Long
+    ) : Flow<Response<DetectionHistoryResponse>>
+
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
+import com.example.findbug.domain.model.response.DetectionHistoryResponse
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
 import com.example.findbug.domain.model.response.ManagementPageResponse
@@ -50,6 +51,9 @@ class CustomerViewModel @Inject constructor(
 
     private val _customerParticularResponse = MutableStateFlow(Response.success(ManagementProfileSaveResponse()))
     val customerParticularResponse: MutableStateFlow<Response<ManagementProfileSaveResponse>> = _customerParticularResponse
+
+    private val _detectionHistoryResponse = MutableStateFlow(Response.success(DetectionHistoryResponse(null)))
+    val detectionHistoryResponse: MutableStateFlow<Response<DetectionHistoryResponse>> = _detectionHistoryResponse
 
     // 회원 정보 업데이트
     fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto) {
@@ -168,4 +172,17 @@ class CustomerViewModel @Inject constructor(
             }
         }
     }
+
+    fun getPestLog(staffId: Long, memberId: Long) {
+        viewModelScope.launch {
+            try {
+                customerApiRepository.getPestLogList(staffId, memberId).collect { response ->
+                    _detectionHistoryResponse.value = response
+                }
+            } catch (e:Exception) {
+                Log.e("CustomerViewModel getPestLog Error", e.message.toString())
+            }
+        }
+    }
+
 }

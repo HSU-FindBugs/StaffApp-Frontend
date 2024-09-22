@@ -5,6 +5,7 @@ import com.example.findbug.data.remote.CustomerApi
 import com.example.findbug.domain.model.request.ManagementProfileUpdateNoteRequestDto
 import com.example.findbug.domain.model.request.MemberRegisterRequestDto
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
+import com.example.findbug.domain.model.response.DetectionHistoryResponse
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
 import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
 import com.example.findbug.domain.model.response.ManagementPageResponse
@@ -110,4 +111,19 @@ class CustomerApiDataSource @Inject constructor(
     }.catch { e ->
         Log.e("CustomerApiDataSource 에러", e.message.toString())
     }
+
+    // 고객 특이사항 수정
+    fun getPestLogList(
+        staffId: Long,
+        memberId: Long,
+    ): Flow<Response<DetectionHistoryResponse>> = flow {
+        val result = customerApi.getPestLogList(
+            staffId,
+            memberId
+        )
+        emit(result)
+    }.catch { e ->
+        Log.e("CustomerApiDataSource 에러", e.message.toString())
+    }
+
 }
