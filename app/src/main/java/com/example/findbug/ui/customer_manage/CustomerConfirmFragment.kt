@@ -2,6 +2,7 @@ package com.example.findbug.ui.customer_manage
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -22,8 +23,16 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
     private val customerViewModel : CustomerViewModel by activityViewModels()
     private var memberId: Long = 0
 
+
+    private val onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerHomeFragment()
+            findNavController().navigateSafe(action.actionId)
+        }
+    }
+
     override fun setLayout() {
-        setToolbarNavigation(binding.fragmentCustomerConfirmToolbar.toolbarPreviousIb)
+        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
         getPostId()
         observeViewModel()
         initButton()
@@ -66,6 +75,7 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
                 customerViewModel.registerCustomerVisit(1, memberId) // 고객 방문 등록 API
             }
 
+            //  memberId, memo 담은 bundle
             val args = Bundle().apply {
                 putLong("memberId", memberId)
                 putString("memo", binding.fragmentCustomerConfirmDescTv.text.toString())
@@ -106,6 +116,11 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
             fragmentCustomerConfirmEditCustomerInfoIb.setOnClickListener {
                 val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerInfoEditFragment()
                 findNavController().navigateSafe(action.actionId, args)
+            }
+
+            fragmentCustomerConfirmToolbar.toolbarPreviousIb.setOnClickListener {
+                val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerHomeFragment()
+                findNavController().navigateSafe(action.actionId)
             }
         }
 
