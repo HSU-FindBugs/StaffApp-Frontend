@@ -10,7 +10,7 @@ import retrofit2.http.Path
 interface MainApi {
 
     // 메인 페이지 조회
-    @POST("/api/main/{id}")
+    @GET("/api/main/{id}")
     suspend fun getMainPage(
         @Path("id") id: Int
     ): Response<MainPageResponse>
