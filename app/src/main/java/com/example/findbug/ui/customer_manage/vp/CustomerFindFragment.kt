@@ -72,7 +72,7 @@ class CustomerFindFragment : BaseFragment<FragmentCustomerFindBinding>(R.layout.
         if (item is ManagementPageMemberDto) {
             val action = CustomerHomeFragmentDirections.actionCustomerHomeFragmentToCustomerConfirmFragment()
             val args = Bundle().apply {
-                putInt("customerId", item.id ?: 1)
+                putLong("memberId", item.id ?: 1)
             }
             findNavController().navigateSafe(action.actionId, args)
         }
