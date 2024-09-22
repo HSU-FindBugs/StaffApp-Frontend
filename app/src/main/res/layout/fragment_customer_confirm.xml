@@ -99,7 +99,7 @@
                     android:background="@drawable/shape_rounded_rect_80dp"
                     android:backgroundTint="@color/white"
                     android:gravity="center"
-                    android:text="@{`D-` + profilePage.remainingDays}"
+                    android:text="@{profilePage.remainingDays}"
                     android:textColor="@color/Blue700"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -318,7 +318,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="5dp"
-                    android:text="@{profilePageVisit.visitedAt}"
+                    android:text="@{profilePageVisit.title}"
                     app:layout_constraintStart_toEndOf="@+id/fragment_customer_confirm_preview_iv"
                     app:layout_constraintTop_toTopOf="@+id/fragment_customer_confirm_preview_iv" />
 

@@ -15,14 +15,13 @@ import com.example.findbug.utils.extension.navigateSafe
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
-        >(R.layout.fragment_customer_confirm) {
+class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding>
+    (R.layout.fragment_customer_confirm) {
 
     private lateinit var visitStatus: String
 
     private val customerViewModel : CustomerViewModel by activityViewModels()
     private var memberId: Long = 0
-
 
     private val onBackPressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
@@ -47,12 +46,28 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
     private fun observeViewModel() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                customerViewModel.registerCustomerVisit(1, memberId)
+                customerViewModel.getCustomerProfile(1, memberId)
                 customerViewModel.customerProfileResponse.collect() { res ->
                     binding.profilePage = res.body()?.managementProfilePageMemberDto
                     binding.profilePageVisit = res.body()?.managementProfilePageVisitDto
                     visitStatus = res.body()?.managementProfilePageMemberDto?.visitStatus.toString()
+                    showButton()
                 }
+            }
+        }
+    }
+
+    private fun showButton() {
+        when(visitStatus) {
+            "방문 완료" -> {
+                binding.fragmentCustomerConfirmVisitTv.visibility = View.VISIBLE    // 방문 완료
+                binding.fragmentCustomerConfirmSaveBtn.visibility = View.INVISIBLE       // 저장하기 버튼
+                binding.fragmentCustomerConfirmSaveBtn.isEnabled = false
+            }
+            "방문 필요" -> {
+                binding.fragmentCustomerConfirmVisitTv.visibility = View.INVISIBLE        // 방문 완료
+                binding.fragmentCustomerConfirmSaveBtn.visibility = View.VISIBLE  // 저장하기 버튼
+                binding.fragmentCustomerConfirmSaveBtn.isEnabled = true
             }
         }
     }
@@ -62,16 +77,7 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
         // 저장하기 버튼 누르면 방문완료 버튼 보여짐 및 저장하기 버튼 안보임
         with(binding) {
             fragmentCustomerConfirmSaveBtn.setOnClickListener {
-                when(visitStatus) {
-                    "방문 완료" -> {
-                        binding.fragmentCustomerConfirmVisitTv.visibility = View.VISIBLE    // 방문 완료
-                        binding.fragmentCustomerConfirmSaveBtn.visibility = View.GONE       // 저장하기 버튼
-                    }
-                    "방문 필요" -> {
-                        binding.fragmentCustomerConfirmVisitTv.visibility = View.GONE        // 방문 완료
-                        binding.fragmentCustomerConfirmSaveBtn.visibility = View.VISIBLE  // 저장하기 버튼
-                    }
-                }
+                showButton()
                 customerViewModel.registerCustomerVisit(1, memberId) // 고객 방문 등록 API
             }
 
@@ -91,13 +97,13 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding
             // 해충 기록 목록 화면으로 이동하는 버튼
             fragmentCustomerConfirmBugSheetIb.setOnClickListener {
                 val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToPestLogListFragment()
-                findNavController().navigateSafe(action.actionId)
+                findNavController().navigateSafe(action.actionId, args)
             }
 
             // 감지 사진 목록 화면으로 이동하는 버튼
             fragmentCustomerConfirmVideoListIb.setOnClickListener {
                 val action = CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToDetectionVideoListFragment()
-                findNavController().navigateSafe(action.actionId)
+                findNavController().navigateSafe(action.actionId, args)
             }
 
             // 실시간 영상 보기 화면으로 이동하는 버튼
