@@ -57,3 +57,19 @@ data class ManagementProfileSaveResponse(
     val isSaved: Boolean? = false,
     val saved: Boolean? = false
 )
+
+// 감지 영상 목록, 해충 기록 목록
+data class DetectionHistoryResponse(
+    val detectionHistoryDtoList: List<DetectionHistory>?
+)
+
+// 감지 영상
+data class DetectionHistory(
+    val id: Long? = 0,
+    val detectionImgUrl: String? = "",
+    val camera: String? = "",
+    val name: String? = "",
+    val date: String? = "",
+    val time: String? = "",
+)
+
