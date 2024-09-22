@@ -18,7 +18,7 @@ class CustomerApiRepositoryImpl @Inject constructor(
     private val dataSource: CustomerApiDataSource
 ): CustomerApiRepository {
 
-    override suspend fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto): Flow<String>
+    override suspend fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto):Flow<Response<String>>
     = dataSource.updateCustomerInfo(memberUpdateRequestDto)
 
     override suspend fun registerCustomer(memberRegisterRequestDto: MemberRegisterRequestDto): Flow<Response<ManagementPageSaveResponse>>

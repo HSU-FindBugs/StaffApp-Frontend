@@ -24,8 +24,8 @@ class CustomerViewModel @Inject constructor(
     private val customerApiRepository: CustomerApiRepository
 ) : ViewModel() {
 
-    private val _customerInfo = MutableStateFlow("")
-    val customerInfo: MutableStateFlow<String> = _customerInfo
+    private val _customerInfo = MutableStateFlow<Response<String>>(Response.success(""))
+    val customerInfo: MutableStateFlow<Response<String>> = _customerInfo
 
     private val _customerSaveResponse = MutableStateFlow(Response.success(ManagementPageSaveResponse()))
     val customerSaveResponse: MutableStateFlow<Response<ManagementPageSaveResponse>> = _customerSaveResponse

@@ -21,7 +21,7 @@ class CustomerApiDataSource @Inject constructor(
     private val customerApi: CustomerApi
 ) {
 
-    fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto): Flow<String> = flow {
+    fun updateCustomerInfo(memberUpdateRequestDto: MemberUpdateRequestDto): Flow<Response<String>> = flow {
         val result = customerApi.updateCustomerInfo(memberUpdateRequestDto)
         emit(result)
     }.catch { e ->

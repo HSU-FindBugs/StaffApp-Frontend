@@ -17,7 +17,7 @@ interface CustomerApiRepository {
     // 회원 정보 업데이트
     suspend fun updateCustomerInfo(
         memberUpdateRequestDto: MemberUpdateRequestDto
-    ): Flow<String>
+    ): Flow<Response<String>>
 
     // 고객 등록
     suspend fun registerCustomer(

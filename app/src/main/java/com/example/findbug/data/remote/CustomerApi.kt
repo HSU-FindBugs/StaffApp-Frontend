@@ -24,7 +24,7 @@ interface CustomerApi {
     @PUT("/management/update")
     suspend fun updateCustomerInfo(
         @Body memberUpdateRequestDto: MemberUpdateRequestDto
-    ): String
+    ): Response<String>
 
     // 고객 등록
     @POST("/management/register")
