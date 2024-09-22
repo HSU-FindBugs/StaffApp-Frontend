@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="mainPageResponse"
+            type="com.example.findbug.domain.model.response.MainPageResponse" />
     </data>
     
     <androidx.core.widget.NestedScrollView
@@ -40,7 +42,7 @@
                 android:layout_height="45dp"
                 android:layout_marginStart="@dimen/start_margin"
                 android:layout_marginTop="24dp"
-                android:background="@color/Blue700"
+                app:imageUrl="@{mainPageResponse.staffProfileUrl}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_title_logo_iv"
                 app:shapeAppearance="@style/Circle"/>
@@ -51,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:text="박종범 컨설턴트"
+                android:text="@{mainPageResponse.staffName}"
                 app:layout_constraintStart_toEndOf="@+id/fragment_home_profile_iv"
                 app:layout_constraintTop_toTopOf="@+id/fragment_home_profile_iv" />
 
@@ -61,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="경기도 하남시 00동"
+                android:text="@{mainPageResponse.staffTerritory}"
                 app:layout_constraintStart_toStartOf="@+id/fragment_home_name_tv"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_name_tv" />
 
@@ -113,7 +115,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="21dp"
                     android:layout_marginBottom="12dp"
-                    android:text="경기도 하남시 00동"
+                    android:text="@{mainPageResponse.staffTerritory}"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="9.02"
+                    android:text="9.25"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -163,7 +165,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginEnd="77dp"
                     android:layout_marginBottom="12dp"
-                    android:text="총 47명"
+                    android:text="@{`총 ` + mainPageResponse.countMemberManagedByStaff + ` 명`}"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginStart="@dimen/start_margin"
-                android:text="최근 벌레 탐지 정보"
+                android:text="자주 나타나는 벌레 탐지 정보"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_home_customer_cl" />
 
@@ -200,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="김성민"
+                    android:text="어제 가장 많이 발견된 벌레"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -210,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="경기도 하남시 00동 00아파트 00동 00호"
+                    android:text="@{mainPageResponse.bugName}"
                     app:layout_constraintStart_toStartOf="@+id/fragment_home_recent_bug_detect_name_tv"
                     app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_name_tv" />
 
@@ -222,7 +224,7 @@
                     android:layout_marginStart="@dimen/start_margin"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="11dp"
-                    android:text="탐지일 2024. 09. 02"
+                    android:text="@{`탐지 건수: ` + mainPageResponse.countMemberManagedByStaff}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/fragment_home_recent_bug_detect_address_tv" />

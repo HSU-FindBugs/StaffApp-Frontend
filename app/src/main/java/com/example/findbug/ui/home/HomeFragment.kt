@@ -27,7 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     private fun initSettings() {
         initButton()
         initAdapter()
-        //observerViewModel()
+        observerViewModel()
     }
 
     private fun initButton() {
@@ -56,10 +56,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     private fun observerViewModel() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    mainViewModel.getMainPage(0)
-                }
+                mainViewModel.getMainPage(1)
                 mainViewModel.mainPageResponse.collect() { res ->
+                    binding.mainPageResponse = res.body()
                     res.body()?.notificationDtoList?.let { notificationList ->
                         noticeListRVAdapter.submitList(notificationList)
                     }
