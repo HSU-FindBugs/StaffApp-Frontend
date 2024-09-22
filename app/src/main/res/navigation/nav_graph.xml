@@ -81,7 +81,11 @@
         android:id="@+id/customerReportFragment"
         android:name="com.example.findbug.ui.customer_manage.CustomerReportEditFragment"
         android:label="CustomerReportFragment"
-        tools:layout="@layout/fragment_customer_report_edit"/>
+        tools:layout="@layout/fragment_customer_report_edit">
+        <action
+            android:id="@+id/action_customerReportFragment_to_customerConfirmFragment"
+            app:destination="@id/customerConfirmFragment" />
+    </fragment>
 
     <!-- 고객관리 - 해충 기록 리스트 -->
     <fragment
