@@ -20,7 +20,8 @@ data class ManagementPageMemberDto(
     val name: String? ="",
     val address: Address? = null,
     val recentVisit: String? = "",
-    val phoneNumber: String? = ""
+    val phoneNumber: String? = "",
+    val membership: Long? = 0
 )
 
 // 고객 등록 Response
