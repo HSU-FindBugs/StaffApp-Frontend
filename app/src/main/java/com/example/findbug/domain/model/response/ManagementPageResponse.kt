@@ -72,5 +72,6 @@ data class DetectionHistory(
     val name: String? = "",
     val date: String? = "",
     val time: String? = "",
+    val localDateTime: String? = "",
 )
 
