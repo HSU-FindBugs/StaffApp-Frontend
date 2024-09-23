@@ -36,7 +36,7 @@ class CustomerSearchFragment : BaseFragment<FragmentCustomerSearchBinding>(R.lay
     }
 
     private fun initSettings() {
-       // setToolbarNavigation(binding.fragmentCustomerSearchToolbar.toolbarPreviousIb)
+        setToolbarNavigation(binding.fragmentCustomerSearchToolbar.toolbarPreviousIb)
         initAdapter()
         observeViewModel()
         initButtons()
