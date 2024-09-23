@@ -90,6 +90,7 @@
                 android:background="@drawable/shape_rounded_rect_60dp"
                 android:backgroundTint="@color/Blue300"
                 android:hint="고객님의 전화번호를 입력하세요."
+                android:text="@{managementPageMember.phoneNumber}"
                 android:paddingStart="20dp"
                 android:textColorHint="@color/Blue500"
                 app:layout_constraintEnd_toEndOf="parent"
