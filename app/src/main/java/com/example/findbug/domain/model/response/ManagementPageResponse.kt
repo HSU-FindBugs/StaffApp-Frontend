@@ -21,7 +21,8 @@ data class ManagementPageMemberDto(
     val address: Address? = null,
     val recentVisit: String? = "",
     val phoneNumber: String? = "",
-    val membership: Long? = 0
+    val membership: Long? = 0,
+    val profileUrl: String? = ""
 )
 
 // 고객 등록 Response
