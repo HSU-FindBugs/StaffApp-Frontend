@@ -40,7 +40,7 @@ class NoticeDialog(title: String, content: String) : DialogFragment() {
 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        binding.dialogStyleNoticeTitleTv.text = title
+        binding.dialogStyleNoticeSubtitleTv.text = title
         binding.dialogStyleNoticeContentTv.text = content
 
         // 확인 버튼 클릭
