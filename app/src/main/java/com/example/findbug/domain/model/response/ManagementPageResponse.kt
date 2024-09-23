@@ -39,7 +39,7 @@ data class ManagementProfilePageMemberDto(
     val id: Long? = 0,
     val profileUrl: String? ="",
     val name: String? ="",
-    val address: Address,
+    val address: String? ="",
     val remainingDays: String? = "",
     val visitStatus: String? = "",
     val phoneNumber: String? = "",
