@@ -45,7 +45,7 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding>
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 customerViewModel.getCustomerProfile(1, memberId)
                 customerViewModel.customerProfileResponse.collect() { res ->
                     binding.profilePage = res.body()?.managementProfilePageMemberDto
@@ -84,14 +84,17 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding>
             //  memberId, memo 담은 bundle
             val args = Bundle().apply {
                 putLong("memberId", memberId)
-                putString("memo", binding.fragmentCustomerConfirmDescTv.text.toString())
             }
 
             // 연필 모양 버튼 누르면 고객 특이사항 작성 페이지로 이동 (작성 및 수정) (멤버아이디 전달)
             fragmentCustomerConfirmEditSignificantIb.setOnClickListener {
+                val args1 = Bundle().apply {
+                    putLong("memberId", memberId)
+                    putString("memo", binding.fragmentCustomerConfirmSignificantDescTv.text.toString())
+                }
                 val action =
                     CustomerConfirmFragmentDirections.actionCustomerConfirmFragmentToCustomerReportFragment()
-                findNavController().navigateSafe(action.actionId, args)
+                findNavController().navigateSafe(action.actionId, args1)
             }
 
             // 해충 기록 목록 화면으로 이동하는 버튼
