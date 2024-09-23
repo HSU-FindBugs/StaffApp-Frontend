@@ -69,7 +69,7 @@
                 android:id="@+id/fragment_detection_video_show_preview__iv"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/white"
+                android:background="@color/Black700"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/fragment_detection_video_show_guideline_35"

@@ -10,19 +10,37 @@ import androidx.core.content.ContextCompat
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentDetectionVideoShowBinding
+import com.example.findbug.utils.GlobalApplication
 
 class DetectionVideoShowFragment : BaseFragment<FragmentDetectionVideoShowBinding>(R.layout.fragment_detection_video_show) {
+
+    private lateinit var name: String
+    private lateinit var imgUrl: String
+    private lateinit var localDateTime: String
 
     override fun setLayout() {
         initSettings()
     }
 
     private fun initSettings() {
-        Log.d("로그", "로그")
+        receiveData()
+        setData()
     }
 
-    private fun initAdapter() {
+    private fun setData() {
+        binding.fragmentDetectionVideoShowCameraNameTv.text = name
+        imgUrl.let { GlobalApplication.loadImage(binding.fragmentDetectionVideoShowPreviewIv, imgUrl) }
+        binding.fragmentDetectionVideoShowCameraTimeTv.text = localDateTime
+    }
 
+    private fun receiveData() {
+        arguments.let {
+            if (it != null) {
+                name = it.getString("name") ?: ""
+                imgUrl = it.getString("imgUrl") ?: ""
+                localDateTime = it.getString("localDateTime") ?: ""
+            }
+        }
     }
 
 }
