@@ -66,7 +66,7 @@ data class DetectionHistoryResponse(
     val detectionHistoryDtoList: List<DetectionHistory>?
 )
 
-// 감지 영상
+// 감지 영상, 벌레 탐지 이력 목록
 data class DetectionHistory(
     val id: Long? = 0,
     val detectionImgUrl: String? = "",

@@ -3,7 +3,7 @@ package com.example.findbug.domain.model.response
 import java.time.LocalTime
 
 // 단일 벌레 기록 세부 정보 Response
-data class BugRecordDto(
+data class BugRecordResponse(
     val bugName: String? = "",
     val bugDescription: String? = "",
     val cameraId: Long? = 0,
