@@ -9,8 +9,8 @@ data class BugRecordResponse(
     val cameraId: Long? = 0,
     val bugFindDate: String? = "",
     val bugFindTime: LocalTime? = null,
-    val bugDetailDto: BugDetailResponse? = null,
-    val bugSolutionDto: BugSolutionResponse? = null
+    val bugDetail: BugDetailResponse? = null,
+    val bugSolution: BugSolutionResponse? = null
 )
 
 // 알림 Response
