@@ -12,6 +12,7 @@ import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentPestLogBinding
 import com.example.findbug.ui.home.MainViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log) {
@@ -36,6 +37,7 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
         setToolbarNavigation(binding.fragmentPestLogToolbar.toolbarPreviousIb)
         getDetectionHistoryId()
         initView()
+        observeViewModel()
         initButtons()
         updatePageUI(currentPage)
         changePage()
@@ -51,6 +53,11 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 mainViewModel.getBugRecord(detectionHistoryId)
+                mainViewModel.bugRecordResponse.collect() { res ->
+                    binding.bugRecord = res.body()
+                    binding.bugDetail = res.body()?.bugDetail
+                    binding.bugSolution = res.body()?.bugSolution
+                }
             }
         }
     }
