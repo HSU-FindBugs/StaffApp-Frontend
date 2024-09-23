@@ -22,3 +22,10 @@ data class NotificationDto(
 data class SseEmitter(
     val timeout: String? = ""
 )
+
+// 프로필 조회 Response
+data class ProfileResponse(
+    val profileUrl: String? = "",
+    val name: String? = "",
+    val address: String? = ""
+)
