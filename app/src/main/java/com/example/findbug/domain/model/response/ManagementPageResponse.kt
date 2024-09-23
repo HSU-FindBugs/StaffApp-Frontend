@@ -41,6 +41,7 @@ data class ManagementProfilePageMemberDto(
     val address: Address,
     val remainingDays: String? = "",
     val visitStatus: String? = "",
+    val phoneNumber: String? = "",
     val memo: String? = ""
 )
 
