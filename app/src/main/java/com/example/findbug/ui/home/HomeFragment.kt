@@ -70,7 +70,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     // 리사이클러뷰 아이템 클릭 리스너
     override fun onItemClick(item: Any) {
         if (item is NotificationDto) {
-            item.content?.let { title -> item.title?.let { content -> NoticeDialog(title, content) } } ?.show(parentFragmentManager, "NoticeDialog")
+            item.title?.let { title ->
+                item.content?.let { content ->
+                    NoticeDialog(title, content).show(parentFragmentManager, "NoticeDialog")
+                }
+            }
         }
     }
 

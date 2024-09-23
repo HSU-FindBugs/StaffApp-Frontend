@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="21dp"
-                    android:text="010-1234-5678"
+                    android:text="@{profilePage.phoneNumber}"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_name_tv"
                     app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_name_tv" />
@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:getAddress="@{profilePage.address}"
+                    android:text="@{profilePage.address}"
                     android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="@+id/fragment_customer_confirm_phone_num_tv"
                     app:layout_constraintTop_toBottomOf="@+id/fragment_customer_confirm_phone_num_tv" />
@@ -290,7 +290,7 @@
                 android:id="@+id/fragment_customer_confirm_recent_visit_cl"
                 style="@style/list1_style"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="84dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginStart="@dimen/start_margin"
                 android:layout_marginEnd="@dimen/end_margin"
@@ -306,7 +306,8 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
                     android:background="@drawable/shape_rounded_rect_8dp"
-                    app:imageUrl="@{profilePageVisit.detectedImgUrl}"
+                    app:imageUrl2="@{profilePageVisit.detectedImgUrl}"
+                    app:roundedCorners="@{8}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

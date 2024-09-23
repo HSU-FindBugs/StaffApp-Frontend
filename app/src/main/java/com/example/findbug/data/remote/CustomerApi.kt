@@ -83,9 +83,9 @@ interface CustomerApi {
         @Body managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Response<ManagementProfileSaveResponse>
 
-    // 고객 감지 영상 조회, 해충 기록 조회
+    // 고객 감지 영상 조회
     @POST("/management/visit/{staff_id}/{member_id}/history")
-    suspend fun getPestLogList (
+    suspend fun getDetectedVideoList (
         @Path("staff_id") staff_id: Long,
         @Path("member_id") member_id: Long,
     ): Response<DetectionHistoryResponse>

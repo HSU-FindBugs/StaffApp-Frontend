@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="memo"
+            type="String" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -35,6 +37,7 @@
                 android:paddingStart="25dp"
                 android:paddingEnd="8dp"
                 android:gravity="top"
+                android:text="@{memo}"
                 android:background="@drawable/shape_rounded_rect_15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

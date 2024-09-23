@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="bugRecord"
+            type="com.example.findbug.domain.model.response.BugRecordResponse" />
+        <variable
+            name="bugDetail"
+            type="com.example.findbug.domain.model.response.BugDetailResponse" />
+        <variable
+            name="bugSolution"
+            type="com.example.findbug.domain.model.response.BugSolutionResponse" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -63,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="이질 벌레"
+                    android:text="@{bugRecord.bugName}"
                     android:textColor="@color/Blue700"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +109,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Cam1"
+                        android:text="@{`Cam` +  bugRecord.cameraId}"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

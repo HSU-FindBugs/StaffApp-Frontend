@@ -18,26 +18,15 @@
             layout="@layout/toolbar_base"
             app:toolbarTitle="@{`감지 영상`}"/>
 
-        <TextView
-            android:id="@+id/fragment_detection_video_show_camera_name_tv"
-            style="@style/body2_regular_14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="16dp"
-            android:text="박종범 고객님의 카메라"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="68dp"
             android:background="@color/Black700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_detection_video_show_camera_name_tv">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/fragment_detection_video_show_guideline_35"
@@ -69,7 +58,7 @@
                 android:id="@+id/fragment_detection_video_show_preview__iv"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/white"
+                android:background="@color/Black700"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/fragment_detection_video_show_guideline_35"

@@ -15,7 +15,7 @@
         <include
             android:id="@+id/fragment_customer_search_toolbar"
             layout="@layout/toolbar_base"
-            app:toolbarTitle="@{`고객 특이사항`}"/>
+            app:toolbarTitle="@{`고객 검색`}"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_customer_search_cl"

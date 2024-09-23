@@ -37,7 +37,7 @@ class CustomerReportEditFragment : BaseFragment<FragmentCustomerReportEditBindin
 
     // 특이사항 메모 불러오기
     private fun getMemo() {
-        binding.fragmentCustomerReportEt.text = Editable.Factory.getInstance().newEditable(memo)
+        binding.memo = memo
     }
 
     private fun getPostId() {

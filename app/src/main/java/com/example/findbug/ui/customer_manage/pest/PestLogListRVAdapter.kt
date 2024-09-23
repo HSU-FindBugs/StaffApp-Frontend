@@ -16,7 +16,7 @@ class PestLogListRVAdapter(private val clickListener: RVClickListener) : BaseAda
     )
 ) {
     override val layoutId: Int
-        get() = R.layout.fragment_pest_log_list
+        get() = R.layout.item_pest_list
 
     override fun bind(binding: ItemPestListBinding, item: DetectionHistory) {
         binding.detectionHistory = item

@@ -20,7 +20,9 @@ data class ManagementPageMemberDto(
     val name: String? ="",
     val address: Address? = null,
     val recentVisit: String? = "",
-    val phoneNumber: String? = ""
+    val phoneNumber: String? = "",
+    val membership: Long? = 0,
+    val profileUrl: String? = ""
 )
 
 // 고객 등록 Response
@@ -38,9 +40,10 @@ data class ManagementProfilePageMemberDto(
     val id: Long? = 0,
     val profileUrl: String? ="",
     val name: String? ="",
-    val address: Address,
+    val address: String? ="",
     val remainingDays: String? = "",
     val visitStatus: String? = "",
+    val phoneNumber: String? = "",
     val memo: String? = ""
 )
 
@@ -63,7 +66,7 @@ data class DetectionHistoryResponse(
     val detectionHistoryDtoList: List<DetectionHistory>?
 )
 
-// 감지 영상
+// 감지 영상, 벌레 탐지 이력 목록
 data class DetectionHistory(
     val id: Long? = 0,
     val detectionImgUrl: String? = "",
@@ -71,5 +74,6 @@ data class DetectionHistory(
     val name: String? = "",
     val date: String? = "",
     val time: String? = "",
+    val localDateTime: String? = "",
 )
 

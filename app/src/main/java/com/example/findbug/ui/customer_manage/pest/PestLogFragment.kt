@@ -1,22 +1,26 @@
 package com.example.findbug.ui.customer_manage.pest
 
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.findbug.R
 import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentPestLogBinding
+import com.example.findbug.ui.home.MainViewModel
+import kotlinx.coroutines.launch
 
 class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_pest_log) {
 
+    private val mainViewModel : MainViewModel by activityViewModels()
+
     private var currentPage = 1
+    private var detectionHistoryId: Long = 0
+
     private lateinit var pageTextViews: List<TextView>
     private lateinit var prevButton: ImageButton
     private lateinit var nextButton: ImageButton
@@ -30,10 +34,25 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
 
     private fun initSettings() {
         setToolbarNavigation(binding.fragmentPestLogToolbar.toolbarPreviousIb)
+        getDetectionHistoryId()
         initView()
         initButtons()
         updatePageUI(currentPage)
         changePage()
+    }
+
+    private fun getDetectionHistoryId() {
+        arguments.let {
+            if (it != null) { detectionHistoryId = it.getLong("detectionHistoryId") }
+        }
+    }
+
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                mainViewModel.getBugRecord(detectionHistoryId)
+            }
+        }
     }
 
     private fun initView() {
