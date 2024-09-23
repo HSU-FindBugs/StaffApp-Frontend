@@ -45,7 +45,6 @@ class CustomerReportEditFragment : BaseFragment<FragmentCustomerReportEditBindin
             memberId = it.getLong("memberId")?.toLong() ?: 1
             memo = it.getString("memo") ?: ""
         }
-        Log.d("메모메ㅗ", "memo : $memo")
     }
 
     private fun initButton() {
