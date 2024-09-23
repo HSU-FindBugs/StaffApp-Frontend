@@ -77,8 +77,8 @@ class CustomerConfirmFragment : BaseFragment<FragmentCustomerConfirmBinding>
         // 저장하기 버튼 누르면 방문완료 버튼 보여짐 및 저장하기 버튼 안보임
         with(binding) {
             fragmentCustomerConfirmSaveBtn.setOnClickListener {
-                showButton()
                 customerViewModel.registerCustomerVisit(1, memberId) // 고객 방문 등록 API
+                showButton()
             }
 
             //  memberId, memo 담은 bundle
