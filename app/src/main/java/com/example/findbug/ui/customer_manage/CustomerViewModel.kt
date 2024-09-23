@@ -173,10 +173,10 @@ class CustomerViewModel @Inject constructor(
         }
     }
 
-    fun getPestLog(staffId: Long, memberId: Long) {
+    fun getDetectedVideoList(staffId: Long, memberId: Long) {
         viewModelScope.launch {
             try {
-                customerApiRepository.getPestLogList(staffId, memberId).collect { response ->
+                customerApiRepository.getDetectedVideoList(staffId, memberId).collect { response ->
                     _detectionHistoryResponse.value = response
                 }
             } catch (e:Exception) {

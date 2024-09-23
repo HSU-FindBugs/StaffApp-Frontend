@@ -47,7 +47,7 @@ class DetectionVideoListFragment : BaseFragment<FragmentDetectionVideoListBindin
     private fun observeViewModel() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                customerViewModel.getPestLog(1, memberId)
+                customerViewModel.getDetectedVideoList(1, memberId)
                 customerViewModel.detectionHistoryResponse.collect() { res ->
                     detectionVideoListRVAdapter.submitList(res.body()?.detectionHistoryDtoList)
                 }

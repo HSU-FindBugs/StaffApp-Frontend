@@ -57,9 +57,9 @@ class CustomerApiRepositoryImpl @Inject constructor(
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>> = dataSource.updateCustomerParticular(staffId, memberId, managementProfileUpdateNoteRequestDto)
 
-    override suspend fun getPestLogList(
+    override suspend fun getDetectedVideoList(
         staffId: Long,
         memberId: Long
-    ): Flow<Response<DetectionHistoryResponse>> = dataSource.getPestLogList(staffId, memberId)
+    ): Flow<Response<DetectionHistoryResponse>> = dataSource.getDetectedVideoList(staffId, memberId)
 
 }

@@ -66,7 +66,8 @@ interface CustomerApiRepository {
         managementProfileUpdateNoteRequestDto: ManagementProfileUpdateNoteRequestDto
     ): Flow<Response<ManagementProfileSaveResponse>>
 
-    suspend fun getPestLogList(
+    // 감지 영상 목록 조회
+    suspend fun getDetectedVideoList(
         staffId: Long,
         memberId: Long
     ) : Flow<Response<DetectionHistoryResponse>>

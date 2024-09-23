@@ -113,11 +113,11 @@ class CustomerApiDataSource @Inject constructor(
     }
 
     // 고객 특이사항 수정
-    fun getPestLogList(
+    fun getDetectedVideoList(
         staffId: Long,
         memberId: Long,
     ): Flow<Response<DetectionHistoryResponse>> = flow {
-        val result = customerApi.getPestLogList(
+        val result = customerApi.getDetectedVideoList(
             staffId,
             memberId
         )
