@@ -26,7 +26,8 @@
             android:layout_marginStart="6dp"
             android:background="@drawable/shape_rounded_rect_8dp"
             android:backgroundTint="@color/Blue500"
-            app:imageUrl="@{notificationDto.profileUrl}"
+            app:imageUrl2="@{notificationDto.profileUrl}"
+            app:roundedCorners="@{8}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
