@@ -44,25 +44,11 @@ object BindingAdapters {
                 if (!it.region_1depth.isNullOrEmpty()) append(it.region_1depth)
                 if (!it.region_2depth.isNullOrEmpty()) append(" ${it.region_2depth}")
                 if (!it.region_3depth.isNullOrEmpty()) append(" ${it.region_3depth}")
+                if (!it.street_name.isNullOrEmpty()) append(" ${it.street_name}")
             }
         }.trim()
 
         view.text = formattedRegionAddress
     }
-
-    // 상세 주소
-    @JvmStatic
-    @BindingAdapter("getDetailAddress")
-    fun getDetailAddress(view: TextView, address: Address?) {
-        val formattedDetailAddress = buildString {
-            address?.let {
-                if (!it.street_name.isNullOrEmpty()) append(" ${it.street_name}")
-                if (!it.detail_address.isNullOrEmpty()) append(" ${it.detail_address}")
-            }
-        }.trim()
-
-        view.text = formattedDetailAddress
-    }
-
 
 }
