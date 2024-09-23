@@ -1,8 +1,10 @@
 package com.example.findbug.ui.customer_manage
 
 import android.os.Bundle
+import android.telephony.PhoneNumberFormattingTextWatcher
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.RadioButton
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
@@ -15,6 +17,7 @@ import com.example.findbug.base.BaseFragment
 import com.example.findbug.databinding.FragmentCustomerInfoEditBinding
 import com.example.findbug.domain.model.request.Address
 import com.example.findbug.domain.model.request.MemberUpdateRequestDto
+import com.example.findbug.domain.model.response.Quad
 import com.example.findbug.utils.extension.navigateSafe
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -29,8 +32,8 @@ class CustomerInfoEditFragment :
     private lateinit var address1: String
     private lateinit var address2: String
     private lateinit var address3: String
-    private lateinit var detailAddress1: String
-    private lateinit var detailAddress2: String
+    private lateinit var streetName: String
+    private lateinit var detailAddress: String
 
     override fun setLayout() {
         initSettings()
@@ -66,20 +69,33 @@ class CustomerInfoEditFragment :
                 customerViewModel.getMemberProfile(memberId)
                 customerViewModel.memberProfileResponse.collect() { res ->
                     binding.managementPageMember = res.body()
+                    val membership = res.body()?.membership
+                    if (membership != null) { checkMembershipRadioButton(membership) }
                 }
             }
         }
     }
 
+    // 멤버십 라디오 버튼 설정 함수
+    private fun checkMembershipRadioButton(membership: Long) {
+        when (membership) {
+            1L -> binding.fragmentCustomerInfoEditRadioGroup.check(R.id.fragment_customer_info_edit_1month_radio_btn)
+            3L -> binding.fragmentCustomerInfoEditRadioGroup.check(R.id.fragment_customer_info_edit_3month_radio_btn)
+            6L -> binding.fragmentCustomerInfoEditRadioGroup.check(R.id.fragment_customer_info_edit_6month_radio_btn)
+            12L -> binding.fragmentCustomerInfoEditRadioGroup.check(R.id.fragment_customer_info_edit_1year_radio_btn)
+        }
+    }
+
     // 주소 분리 함수
-    private fun splitAddress(address: String): Triple<String, String, String> {
+    private fun splitAddress(address: String): Quad<String, String, String, String> {
 
         val addressParts = address.split(" ")
         val address1 = addressParts.getOrElse(0) { "" }
         val address2 = addressParts.getOrElse(1) { "" }
         val address3 = addressParts.getOrElse(2) { "" }
+        val streetName = addressParts.getOrElse(3) { "" }
 
-        return Triple(address1, address2, address3)
+        return Quad(address1, address2, address3, streetName)
     }
 
     // 고객 정보 업데이트 API 호출 함수
@@ -89,19 +105,24 @@ class CustomerInfoEditFragment :
 
         // 지역 주소
         val fullAddress = binding.fragmentCustomerInfoEditAddressEt.text.toString()
-        val (addr1, addr2, addr3) = splitAddress(fullAddress)
-        address1 = addr1
-        address2 = addr2
-        address3 = addr3
+        val (addr1, addr2, addr3, street) = splitAddress(fullAddress)
+        Log.d("주소", "전체 주소 : $fullAddress, 1: $addr1, 2: $addr2, 3: $addr3, 4: $street,")
+
+        if (addr1 != null) {
+            address1 = addr1
+        }
+        if (addr2 != null) {
+            address2 = addr2
+        }
+        if (addr3 != null) {
+            address3 = addr3
+        }
+        if (street != null) {
+            streetName = street
+        }
 
         // 상세 주소
-        val detailAddress = binding.fragmentCustomerInfoEditDetailAddressEt.text.toString()
-        detailAddress1 = detailAddress.substring(0, 5)
-        detailAddress2 = if (detailAddress.length > 5) {
-            detailAddress.substring(5)
-        } else {
-            ""
-        }
+        detailAddress = binding.fragmentCustomerInfoEditDetailAddressEt.text.toString()
 
         // 멤버십 (라디오 버튼)
         val selectedRadioButtonId = binding.fragmentCustomerInfoEditRadioGroup.checkedRadioButtonId
@@ -123,7 +144,7 @@ class CustomerInfoEditFragment :
         }
 
         lifecycleScope.launch {
-            val address = Address(address1, address2, address3, detailAddress1, detailAddress2)
+            val address = Address(address1, address2, address3, streetName, detailAddress)
             val memberUpdateRequestDto = MemberUpdateRequestDto(
                 1,
                 memberId,
@@ -131,7 +152,7 @@ class CustomerInfoEditFragment :
                 "",
                 binding.fragmentCustomerInfoEditPhoneEt.text.toString(),
                 membership,
-                address
+                address,
             )
             customerViewModel.updateCustomerInfo(memberUpdateRequestDto)
             customerViewModel.customerInfo.collect() { res ->
@@ -201,6 +222,7 @@ class CustomerInfoEditFragment :
             // EditText에 TextWatcher 추가
             fragmentCustomerInfoEditNameEt.addTextChangedListener(textWatcher)
             fragmentCustomerInfoEditPhoneEt.addTextChangedListener(textWatcher)
+            fragmentCustomerInfoEditPhoneEt.addTextChangedListener(PhoneNumberFormattingTextWatcher())  // 없어도 번호 처리 됨
             fragmentCustomerInfoEditAddressEt.addTextChangedListener(textWatcher)
             fragmentCustomerInfoEditDetailAddressEt.addTextChangedListener(textWatcher)
 
