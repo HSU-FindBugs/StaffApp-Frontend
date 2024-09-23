@@ -58,7 +58,6 @@ class DetectionVideoListFragment : BaseFragment<FragmentDetectionVideoListBindin
     override fun onItemClick(item: Any) {
         if (item is DetectionHistory) {
             val args = Bundle().apply {
-                putString("name", item.name)
                 putString("imgUrl", item.detectionImgUrl)
                 putString("localDateTime", item.localDateTime)
             }

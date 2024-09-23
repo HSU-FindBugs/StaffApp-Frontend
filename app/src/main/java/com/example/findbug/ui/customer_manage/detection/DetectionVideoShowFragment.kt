@@ -14,7 +14,6 @@ import com.example.findbug.utils.GlobalApplication
 
 class DetectionVideoShowFragment : BaseFragment<FragmentDetectionVideoShowBinding>(R.layout.fragment_detection_video_show) {
 
-    private lateinit var name: String
     private lateinit var imgUrl: String
     private lateinit var localDateTime: String
 
@@ -23,12 +22,12 @@ class DetectionVideoShowFragment : BaseFragment<FragmentDetectionVideoShowBindin
     }
 
     private fun initSettings() {
+        setToolbarNavigation(binding.fragmentDetectionVideoShowToolbar.toolbarPreviousIb)
         receiveData()
         setData()
     }
 
     private fun setData() {
-        binding.fragmentDetectionVideoShowCameraNameTv.text = name
         imgUrl.let { GlobalApplication.loadImage(binding.fragmentDetectionVideoShowPreviewIv, imgUrl) }
         binding.fragmentDetectionVideoShowCameraTimeTv.text = localDateTime
     }
@@ -36,7 +35,6 @@ class DetectionVideoShowFragment : BaseFragment<FragmentDetectionVideoShowBindin
     private fun receiveData() {
         arguments.let {
             if (it != null) {
-                name = it.getString("name") ?: ""
                 imgUrl = it.getString("imgUrl") ?: ""
                 localDateTime = it.getString("localDateTime") ?: ""
             }
