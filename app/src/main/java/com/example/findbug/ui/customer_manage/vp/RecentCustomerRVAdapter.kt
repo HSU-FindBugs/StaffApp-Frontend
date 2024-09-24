@@ -3,10 +3,7 @@ package com.example.findbug.ui.customer_manage.vp
 import com.example.findbug.R
 import com.example.findbug.base.BaseAdapter
 import com.example.findbug.base.BaseDiffCallback
-import com.example.findbug.databinding.ItemCustomerListBinding
 import com.example.findbug.databinding.ItemRecentSearchBinding
-import com.example.findbug.domain.model.response.ManagementPageRecentSearchResponse
-import com.example.findbug.ui.home.DummyTest
 import com.example.findbug.utils.listener.RVClickListener
 
 // 고객 관리(검색 화면) - 최근 검색한 고객 리사이클러뷰 어댑터
