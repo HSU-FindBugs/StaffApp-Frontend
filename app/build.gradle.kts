@@ -93,6 +93,10 @@ dependencies {
     implementation (libs.moshi.kotlin)
     implementation (libs.converter.moshi)
 
+    // SSE
+    implementation("com.launchdarkly:okhttp-eventsource:4.1.0")
+    implementation("com.squareup.okhttp3:okhttp-sse:4.9.3")
+
     // Room
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
