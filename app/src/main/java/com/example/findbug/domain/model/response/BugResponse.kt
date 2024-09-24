@@ -9,9 +9,9 @@ data class BugRecordResponse(
     val bugUrl: String? = "",
     val cameraId: Long? = 0,
     val bugFindDate: String? = "",
-    val bugFindTime: LocalTime? = null,
-    val bugDetail: BugDetailResponse? = null,
-    val bugSolution: BugSolutionResponse? = null
+    val bugFindTime: String? = null,
+    val bugDetailDto: BugDetailResponse? = null,
+    val bugSolutionDto: BugSolutionResponse? = null
 )
 
 // 알림 Response
@@ -34,6 +34,6 @@ data class BugDetailResponse(
 data class BugSolutionResponse(
     val firstSolution: String? = "",
     val secondSolution: String? = "",
-    val thirdSolution	: String? = "",
-    val fourSolution	: String? = "",
+    val thirdSolution : String? = "",
+    val fourSolution : String? = "",
 )
