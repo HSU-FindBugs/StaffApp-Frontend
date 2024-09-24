@@ -9,6 +9,7 @@ data class MainPageResponse(
     val bugName: String? = "",
     val bugDescription: String? = "",
     val bugStats: String? = "",
+    val bugProfileImg: String? = "",
     val notificationDtoList: List<NotificationDto>? = null
 )
 
