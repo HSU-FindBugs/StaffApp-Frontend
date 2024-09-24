@@ -17,6 +17,7 @@ data class NotificationDto(
     val profileUrl: String? = "",
     val title: String? = "",
     val content: String? = "",
+    val time: String? = "",
 )
 
 // sse-controller
