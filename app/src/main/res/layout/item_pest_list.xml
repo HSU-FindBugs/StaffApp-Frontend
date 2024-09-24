@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="12dp"
-            android:text="@{detectionHistory.camera}"
+            android:text="@{`Cam` + detectionHistory.camera}"
             app:layout_constraintStart_toEndOf="@+id/item_pest_list_iv"
             app:layout_constraintTop_toTopOf="@+id/item_pest_list_iv" />
 
@@ -65,7 +65,6 @@
             android:layout_marginTop="55dp"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="12sp"
-            android:text="@{detectionHistory.date}"
             android:textColor="@color/Blue500"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
