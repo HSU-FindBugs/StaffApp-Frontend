@@ -1,12 +1,10 @@
 package com.example.findbug.ui.customer_manage.vp
 
-import android.util.Log
 import com.example.findbug.R
 import com.example.findbug.base.BaseAdapter
 import com.example.findbug.base.BaseDiffCallback
 import com.example.findbug.databinding.ItemCustomerListBinding
 import com.example.findbug.domain.model.response.ManagementPageMemberDto
-import com.example.findbug.ui.home.DummyTest
 import com.example.findbug.utils.listener.RVClickListener
 import java.text.SimpleDateFormat
 import java.util.Locale

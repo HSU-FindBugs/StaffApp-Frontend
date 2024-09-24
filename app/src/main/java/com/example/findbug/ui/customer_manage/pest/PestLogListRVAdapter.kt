@@ -6,7 +6,6 @@ import com.example.findbug.base.BaseAdapter
 import com.example.findbug.base.BaseDiffCallback
 import com.example.findbug.databinding.ItemPestListBinding
 import com.example.findbug.domain.model.response.DetectionHistory
-import com.example.findbug.ui.home.DummyTest
 import com.example.findbug.utils.listener.RVClickListener
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

@@ -41,8 +41,14 @@ class PestLogFragment : BaseFragment<FragmentPestLogBinding>(R.layout.fragment_p
     private lateinit var titleTextView: TextView
     private lateinit var descTextView: TextView
 
+    override fun onPause() {
+        super.onPause()
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun setLayout() {
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.Blue300)
         initSettings()
     }
 

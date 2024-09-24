@@ -5,7 +5,6 @@ import com.example.findbug.base.BaseAdapter
 import com.example.findbug.base.BaseDiffCallback
 import com.example.findbug.databinding.ItemPestListBinding
 import com.example.findbug.domain.model.response.DetectionHistory
-import com.example.findbug.ui.home.DummyTest
 import com.example.findbug.utils.listener.RVClickListener
 
 // 고객 관리 - 감지 영상 리사이클러뷰 어댑터
