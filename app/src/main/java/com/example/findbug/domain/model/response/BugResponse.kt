@@ -6,6 +6,7 @@ import java.time.LocalTime
 data class BugRecordResponse(
     val bugName: String? = "",
     val bugDescription: String? = "",
+    val bugUrl: String? = "",
     val cameraId: Long? = 0,
     val bugFindDate: String? = "",
     val bugFindTime: LocalTime? = null,
