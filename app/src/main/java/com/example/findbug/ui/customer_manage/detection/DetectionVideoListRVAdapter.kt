@@ -19,7 +19,10 @@ class DetectionVideoListRVAdapter(private val clickListener: RVClickListener) : 
         get() = R.layout.item_pest_list
 
     override fun bind(binding: ItemPestListBinding, item: DetectionHistory) {
+        val dateTime = item.date + " " + item.time
+
         binding.detectionHistory = item
+        binding.itemPestListDateTv.text = dateTime
         binding.clickListener = clickListener
         binding.root.setOnClickListener {
             clickListener.onItemClick(item)

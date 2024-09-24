@@ -3,6 +3,7 @@ package com.example.findbug.ui.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.findbug.domain.model.response.BugDetectionAlertResponse
 import com.example.findbug.domain.model.response.BugRecordResponse
 import com.example.findbug.domain.model.response.DetectionHistory
 import com.example.findbug.domain.model.response.MainPageResponse
@@ -30,6 +31,9 @@ class MainViewModel @Inject constructor(
     private val _sseEmitter =  MutableStateFlow(Response.success(SseEmitter()))
     val sseEmitter: MutableStateFlow<Response<SseEmitter>> = _sseEmitter
 
+    private val _bugDetectionAlertResponse =  MutableStateFlow(BugDetectionAlertResponse())
+    val bugDetectionAlertResponse: MutableStateFlow<BugDetectionAlertResponse> = _bugDetectionAlertResponse
+
     private val _profileResponse =  MutableStateFlow(Response.success(ProfileResponse()))
     val profileResponse: MutableStateFlow<Response<ProfileResponse>> = _profileResponse
 
@@ -51,16 +55,31 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    private var isNotificationConnected = false
+
     fun notificationConnect(staffId: Long) {
-        viewModelScope.launch {
-            try {
-                mainApiRepository.notificationConnect(staffId).collect() {
-                    _sseEmitter.value = it
+        // SSE 연결이 이미 설정되지 않았다면
+        if (!isNotificationConnected) {
+            isNotificationConnected = true  // 플래그를 설정하여 재연결 방지
+            viewModelScope.launch {
+                try {
+                    // SSE 연결 시작
+                    mainApiRepository.notificationConnect(staffId).collect { sseEvent ->
+                        _sseEmitter.value = sseEvent  // 이벤트 수신 시 LiveData에 반영
+                    }
+                } catch (e: Exception) {
+                    Log.e("MainViewModel notificationConnect Error", e.message.toString())
+                    // 에러 발생 시 플래그를 다시 false로 설정하여 재시도 가능하게
+                    isNotificationConnected = false
                 }
-            } catch (e:Exception) {
-                Log.e("MainViewModel notificationConnect Error", e.message.toString())
             }
+        } else {
+            Log.d("MainViewModel", "SSE connection already established.")
         }
+    }
+
+    fun addBugDetectionAlert(bugDetectionAlertResponse: BugDetectionAlertResponse) {
+        _bugDetectionAlertResponse.value = bugDetectionAlertResponse
     }
 
     fun getProfile(staffId: Long) {

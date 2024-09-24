@@ -1,25 +1,25 @@
 package com.example.findbug.domain.model.response
 
+import com.example.findbug.domain.model.request.Address
 import java.time.LocalTime
 
 // 단일 벌레 기록 세부 정보 Response
 data class BugRecordResponse(
     val bugName: String? = "",
     val bugDescription: String? = "",
+    val bugUrl: String? = "",
     val cameraId: Long? = 0,
     val bugFindDate: String? = "",
-    val bugFindTime: LocalTime? = null,
-    val bugDetail: BugDetailResponse? = null,
-    val bugSolution: BugSolutionResponse? = null
+    val bugFindTime: String? = null,
+    val bugDetailDto: BugDetailResponse? = null,
+    val bugSolutionDto: BugSolutionResponse? = null
 )
 
 // 알림 Response
 data class BugDetectionAlertResponse(
-    val bugName: String? = "",
-    val bugDescription: String? = "",
-    val cameraId: Long? = 0,
-    val bugDetailDto: BugDetailResponse? = null,
-    val bugSolutionDto: BugSolutionResponse? = null
+    val name: String? = "",
+    val address: Address? = null,
+    val recentFindTime: String? = ""
 )
 
 // 발견된 해충 정보 Response
@@ -33,6 +33,6 @@ data class BugDetailResponse(
 data class BugSolutionResponse(
     val firstSolution: String? = "",
     val secondSolution: String? = "",
-    val thirdSolution	: String? = "",
-    val fourSolution	: String? = "",
+    val thirdSolution : String? = "",
+    val fourSolution : String? = "",
 )
