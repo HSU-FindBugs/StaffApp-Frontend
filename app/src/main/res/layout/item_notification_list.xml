@@ -6,6 +6,9 @@
         <variable
             name="clickListener"
             type="com.example.findbug.utils.listener.RVClickListener" />
+        <variable
+            name="notificationItem"
+            type="com.example.findbug.domain.model.NotificationItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +24,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginStart="@dimen/start_margin"
             android:background="@color/Blue500"
+            android:src="@drawable/ic_people"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="@dimen/start_margin"
-            android:text="박종범"
+            android:text="@{notificationItem.name}"
             app:layout_constraintStart_toEndOf="@+id/item_notification_list_iv"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginStart="8dp"
-            android:text="탐지일 2024. 09. 02"
+            android:text="탐지일 2024. 09. 25"
             android:textColor="@color/Blue500"
             app:layout_constraintStart_toEndOf="@+id/item_notification_list_title_tv"
             app:layout_constraintTop_toTopOf="@+id/item_notification_list_title_tv" />
@@ -59,7 +63,7 @@
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="경기도 하남시 00동 00아파트 00동 00호"
+            android:text="@{notificationItem.address}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/item_notification_list_title_tv"
