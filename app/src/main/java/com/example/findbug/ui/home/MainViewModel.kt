@@ -41,11 +41,11 @@ class MainViewModel @Inject constructor(
     val detectionHistory: MutableStateFlow<Response<List<DetectionHistory>>> = _detectionHistory
 
     // 추가된 프로퍼티
-    private val _name = MutableStateFlow("")
-    val name: MutableStateFlow<String> = _name
+    private val _name = MutableStateFlow<String?>(null)
+    val name: MutableStateFlow<String?> = _name
 
-    private val _fullAddress = MutableStateFlow("")
-    val fullAddress: MutableStateFlow<String> = _fullAddress
+    private val _fullAddress = MutableStateFlow<String?>(null)
+    val fullAddress: MutableStateFlow<String?> = _fullAddress
 
     fun addBugDetectionAlert(bugDetectionAlertResponse: BugDetectionAlertResponse) {
         _bugDetectionAlertResponse.value = bugDetectionAlertResponse
