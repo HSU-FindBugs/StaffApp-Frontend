@@ -25,7 +25,9 @@
 
 ## 화면
 <p align="center">
-  <img src="" alt="찾아벌레"/>
+  <img src="https://github.com/user-attachments/assets/23410c1e-bbab-4146-b703-8d7f3f2f28e5" alt="찾아벌레"/>
+  <img src="https://github.com/user-attachments/assets/fdab9304-f8c8-434e-9cde-8f7a7846e9e7" alt="찾아벌레"/>
+  <img src="https://github.com/user-attachments/assets/c126f1c5-abbd-4905-9bae-bf4f16581e3b" alt="찾아벌레"/>
 </p>
 
 ## 서비스 구조
