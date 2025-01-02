@@ -80,9 +80,10 @@
 | --- | --- |
 | Architecture | Repository Pattern, MVVM |
 | DI | Hilt |
-| Network | Retrofit, OkHttp, Gson, SSE(Server-Sent Events)|
+| Network | Retrofit, OkHttp, SSE(Server-Sent Events)|
 | Asynchronous | Coroutines, Flow |
 | Jetpack | DataBinding, Navigation | 
+| LocalData | DataStroe | 
 | Image | Glide |
 
 ## 기술스택
