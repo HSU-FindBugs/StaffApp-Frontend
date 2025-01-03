@@ -78,10 +78,11 @@
 ### **🤖** 안드로이드
 | **Category** | **TechStack** |
 | --- | --- |
+| Language | Kotlin |
 | Architecture | Repository Pattern, MVVM |
 | DI | Hilt |
-| Network | Retrofit, OkHttp, SSE(Server-Sent Events)|
-| Asynchronous | Coroutines, Flow |
+| Network | Retrofit, SSE(Server-Sent Events)|
+| Asynchronous | Coroutine, Flow |
 | Jetpack | DataBinding, Navigation | 
 | LocalData | DataStroe | 
 | Image | Glide |
